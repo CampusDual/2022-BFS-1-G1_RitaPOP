@@ -19,5 +19,6 @@
   "FORGOT_PWD": "¿Has olvidado tu contraseña?",
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
   "FOOTER_RIGHTS": "Todos los derechos reservados",
-  "ERROR_EMPTY_USER_PASS": "Los campos de usuario y contraseña no pueden estar vacíos"
+  "ERROR_EMPTY_USER_PASS": "Los campos de usuario y contraseña no pueden estar vacíos",
+  "CLIENT": "Cliente"
 }
