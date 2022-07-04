@@ -20,5 +20,9 @@
   "FOOTER_CREATED_BY": "Created by Imatia Innovation",
   "FOOTER_RIGHTS": "All rights reserved",
   "ERROR_EMPTY_USER_PASS": "Username and password fields cant be empty",
-  "CLIENT": "Client"
+  "CLIENT": "Client",
+  "NAME": "Name",
+  "SURNAME": "Surname",
+  "NIF": "NIF",
+  "BIRTH_DATE": "Birth date"
 }

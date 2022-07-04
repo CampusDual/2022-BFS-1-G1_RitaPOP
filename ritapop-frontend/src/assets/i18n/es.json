@@ -20,5 +20,9 @@
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
   "FOOTER_RIGHTS": "Todos los derechos reservados",
   "ERROR_EMPTY_USER_PASS": "Los campos de usuario y contraseña no pueden estar vacíos",
-  "CLIENT": "Cliente"
+  "CLIENT": "Cliente",
+  "NAME": "Nombre",
+  "SURNAME": "Apellidos",
+  "NIF": "NIF",
+  "BIRTH_DATE": "Fecha de nacimiento"
 }
