@@ -24,5 +24,13 @@
   "NAME": "Name",
   "SURNAME": "Surname",
   "NIF": "NIF",
-  "BIRTH_DATE": "Birth date"
+  "BIRTH_DATE": "Birth date",
+  "TRANSACTIONS": "Transactions",
+  "SELLER_CLI": "Seller client",
+  "BUYER_CLI": "Buyer client",
+  "START_DATE": "Start date",
+  "END_DATE": "End date",
+  "PRICE": "Price",
+  "PRODUCT_NAME": "Product name",
+  "PRODUCT_CATEGORY": "Product category"
 }
