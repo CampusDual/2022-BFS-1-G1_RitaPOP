@@ -7,8 +7,5 @@ export const SERVICE_CONFIG: Object = {
   },
   'transactions': {
     'path': '/transactions'
-  },
-  'details': {
-    'path': '/details'
   }
 };

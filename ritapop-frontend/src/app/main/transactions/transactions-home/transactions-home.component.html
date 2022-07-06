@@ -1,11 +1,11 @@
 <div fxFill fxLayout="column" fxLayoutAlign="start">
-  <o-table attr="transactionsTable" service="transactions" entity="transaction" keys="ID"
-    columns="ID;SELLER_CLI;BUYER_CLI;START_DATE;END_DATE;PRICE;PRODUCT_NAME;PRODUCT_CATEGORY"
-    visible-columns="ID;SELLER_CLI;BUYER_CLI;START_DATE;END_DATE;PRICE;PRODUCT_NAME;PRODUCT_CATEGORY" query-rows="20">
+  <o-table attr="transactionsTable" service="transactions" entity="transactionDetails" keys="ID_TRANSACTION"
+    columns="ID_TRANSACTION;NIF_SELLER;NIF_BUYER;START_DATE;END_DATE;PRICE;PRODUCT_NAME;PRODUCT_CATEGORY"
+    visible-columns="ID_TRANSACTION;NIF_SELLER;NIF_BUYER;START_DATE;END_DATE;PRICE;PRODUCT_NAME;PRODUCT_CATEGORY" query-rows="20">
     <o-table-column attr="PRICE" title="PRICE" type="currency" currency-symbol="€" currency-symbol-position="right"
     thousand-separator="." decimal-separator="," class="o-table-column-centered"></o-table-column>
     <o-table-column attr="START_DATE" title="START_DATE" type="date" format="LL"></o-table-column>
     <o-table-column attr="END_DATE" title="END_DATE" type="date" format="LL"></o-table-column>
-    <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
+    <o-table-column attr="ID_TRANSACTION" title="ID_TRANSACTION" width="100px"></o-table-column>
   </o-table>
 </div>

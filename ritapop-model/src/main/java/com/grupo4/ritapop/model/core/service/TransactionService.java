@@ -29,11 +29,6 @@ public class TransactionService implements ITransactionService {
 	private ClientService clientService;
 
 	@Override
-/*	public EntityResult transactionQuery(Map<String, Object> keyMap, List<String> attrList)
-			throws OntimizeJEERuntimeException {
-		return this.daoHelper.query(this.transactionDao, keyMap, attrList);
-	}
-*/
 	public EntityResult transactionQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException {
 		return this.daoHelper.query(this.transactionDao, keyMap, attrList);
@@ -41,8 +36,6 @@ public class TransactionService implements ITransactionService {
 	
 	@Override
 	public EntityResult transactionInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-//  return this.daoHelper.insert(this.transactionDao, attrMap);
-
 		Map<String, Object> nonTransactionData = removeNonRelatedData(attrMap, TransactionDao.ATTR_SELLER_CLI,
 				TransactionDao.ATTR_BUYER_CLI);
 		this.insertNonRelatedData(nonTransactionData);
@@ -53,8 +46,6 @@ public class TransactionService implements ITransactionService {
 	@Override
 	public EntityResult transactionUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
 			throws OntimizeJEERuntimeException {
-//  return this.daoHelper.update(this.transactionDao, attrMap, keyMap);
-
 		Map<String, Object> nonTransactionData = removeNonRelatedData(attrMap, TransactionDao.ATTR_SELLER_CLI,
 				TransactionDao.ATTR_BUYER_CLI);
 		this.insertNonRelatedData(nonTransactionData);
@@ -111,7 +102,7 @@ public class TransactionService implements ITransactionService {
 		}
 	}
 	@Override
-	 public EntityResult offerTransactionDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+	 public EntityResult transactionDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 	   throws OntimizeJEERuntimeException {
 	  return this.daoHelper.query(this.transactionDao, keyMap, attrList, transactionDao.QUERY_OFFER_DETAILS);
 	 }

@@ -14,5 +14,5 @@ public interface ITransactionService {
  public EntityResult transactionInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
  public EntityResult transactionUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
  public EntityResult transactionDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
- public EntityResult offerTransactionDetailsQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
+ public EntityResult transactionDetailsQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
 }
