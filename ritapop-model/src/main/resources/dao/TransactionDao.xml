@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JdbcEntitySetup
+	xmlns="http://www.ontimize.com/schema/jdbc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
+	catalog="" schema="${mainschema}" table="TRANSACTIONS"
+	datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
+	<DeleteKeys>
+		<Column>ID</Column>
+	</DeleteKeys>
+	<UpdateKeys>
+		<Column>ID</Column>
+	</UpdateKeys>
+	<GeneratedKey>ID</GeneratedKey>
+
+	<Queries>
+		<Query id="details">
+			<AmbiguousColumns>
+				<AmbiguousColumn name="ID_TRANSACTION" prefix="T"
+					databaseName="ID" />
+				<AmbiguousColumn name="ID_SELLER" prefix="C1"
+					databaseName="ID" />
+				<AmbiguousColumn name="ID_BUYER" prefix="C2"
+					databaseName="ID" />
+				<AmbiguousColumn name="NIF_SELLER" prefix="C1"
+					databaseName="NIF" />
+				<AmbiguousColumn name="NIF_BUYER" prefix="C2"
+					databaseName="NIF" />
+			</AmbiguousColumns>
+			<Sentence>
+   <![CDATA[
+     SELECT #COLUMNS# FROM PUBLIC.TRANSACTIONS T
+		INNER JOIN PUBLIC.CLIENT C1 ON
+		T.SELLER_CLI = C1.ID
+		INNER JOIN PUBLIC.CLIENT C2 ON
+		T.BUYER_CLI = C2.ID
+     #WHERE#
+   ]]>
+   </Sentence>
+		</Query>
+	</Queries>
+</JdbcEntitySetup>
