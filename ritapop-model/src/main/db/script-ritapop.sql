@@ -43,7 +43,7 @@ INSERT INTO PUBLIC.CLIENT VALUES (4, 'TOMAS', 'CARRALERO', '28832909V', '1981-09
 INSERT INTO PUBLIC.TRANSACTIONS VALUES (1, 1, 2, '2022-07-04', NULL, 120.50, 'RATON', 'PC');
 INSERT INTO PUBLIC.TRANSACTIONS VALUES (2, 3, 4, '2022-06-30', '2022-07-04', 1000, 'PORTATIL', 'PC');
 
---modificar tabla transactions
+-- modificar tabla transactions
 DROP TABLE PUBLIC.TRANSACTIONS CASCADE;
 
 -- FIN cambios para FG4-28 FECHA: 01-07-2022 15:00
@@ -53,5 +53,23 @@ SELECT * FROM PUBLIC.TRANSACTIONS T
 	T.SELLER_CLI = C1.ID
 	INNER JOIN PUBLIC.CLIENT C2 ON
 	T.BUYER_CLI = C2.ID;
-      
+
+
+-- INICIO Cambios para FG4-26 FECHA: 08-07-2022 14:34
+
+-- Crea la columna de permisos por defecto
+ALTER TABLE PUBLIC.TROLE ADD PERMISSIONS VARCHAR(16777216) DEFAULT '{"menu": [{"attr": "home","visible": false,"enabled": false},{"attr": "client","visible": false,"enabled": false},{"attr": "transaction","visible": false,"enabled": false},{"attr": "logout","visible": false,"enabled": false}]}' NOT NULL;
+-- Modifica los permisos de administrador
+UPDATE PUBLIC.TROLE
+SET PERMISSIONS = ('{"menu": [{"attr": "home","visible": true,"enabled": true},{"attr": "client","visible": true,"enabled": true},{"attr": "transaction","visible": true,"enabled": true},{"attr": "logout","visible": true,"enabled": true}]}')
+WHERE ROLENAME = 'admin';
+-- Crea el rol de gestor
+INSERT INTO PUBLIC.TROLE (ROLENAME, XMLCLIENTPERMISSION)
+VALUES ('gestor', '<?xml version="1.0" encoding="UTF-8"?><security></security>');
+-- Modifica los permisos de gestor
+UPDATE PUBLIC.TROLE
+SET PERMISSIONS = ('{"menu": [{"attr": "home","visible": true,"enabled": true},{"attr": "client","visible": true,"enabled": true},{"attr": "transaction","visible": true,"enabled": true},{"attr": "logout","visible": true,"enabled": true}]}')
+WHERE ROLENAME = 'gestor';
+
+-- FIN Cambios para FG4-26 FECHA: 08-07-2022 14:34
      
