@@ -1,9 +1,10 @@
-
+<o-form show-header="no">
 <div fxFill fxLayout="column" fxLayoutAlign="start">
-  <o-table attr="clientsTable" service="clients" entity="client" keys="ID"
-    columns="ID;NAME;SURNAME;NIF;BIRTH_DATE"
-    visible-columns="ID;NAME;SURNAME;NIF;BIRTH_DATE" query-rows="20">
+  <o-table #clientsTable attr="clientsTable" service="clients" entity="client" keys="ID"
+    columns="ID;NAME;SURNAME;NIF;BIRTH_DATE;PURCHASES;SALES;VIP"
+    visible-columns="ID;NAME;SURNAME;NIF;BIRTH_DATE;PURCHASES;SALES;VIP" query-rows="20">
     <o-table-column attr="BIRTH_DATE" title="BIRTH_DATE" type="date" format="LL"></o-table-column>
     <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
   </o-table>
 </div>
+</o-form>
