@@ -19,8 +19,6 @@ import org.springframework.stereotype.Service;
 @Lazy
 public class PermissionsService implements PermissionsApi {
 
-  public static final String PLANNER_PERMISSION = "{\"menu\": [{\"attr\": \"home\",\"visible\": false,\"enabled\": false},{\"attr\": \"client\",\"visible\": false,\"enabled\": false},{\"attr\": \"transaction\",\"visible\": true,\"enabled\": false},{\"attr\": \"logout\",\"visible\": false,\"enabled\": false}]}";
-
   @Autowired
   DefaultOntimizeDaoHelper daoHelper;
 
@@ -33,7 +31,7 @@ public class PermissionsService implements PermissionsApi {
     List<String> attr = new ArrayList<String>();
     attr.add(ATTR_PERMISSIONS);
     Map<String, Object> map = new HashMap<>();
-    map.put("ID", "1");
+    map.put("ID_ROLENAME", "0");
     EntityResult query = this.daoHelper.query(this.permissionsDao, map, attr);
     entityResultMap.addRecord(new HashMap<>(){{put("permission",((List) query.get(ATTR_PERMISSIONS)).get(0));}});
     return entityResultMap;
