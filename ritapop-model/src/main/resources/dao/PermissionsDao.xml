@@ -6,10 +6,10 @@
  catalog="" schema="${mainschema}" table="TROLE"
  datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
  <DeleteKeys>
-  <Column>ID_ROLENAME</Column>
+  <Column>ROLENAME</Column>
  </DeleteKeys>
  <UpdateKeys>
-  <Column>ID_ROLENAME</Column>
+  <Column>ROLENAME</Column>
  </UpdateKeys>
- <GeneratedKey>ID_ROLENAME</GeneratedKey>
+ <GeneratedKey>ROLENAME</GeneratedKey>
 </JdbcEntitySetup>
