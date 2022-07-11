@@ -35,5 +35,7 @@
   "END_DATE": "End date",
   "PRICE": "Price",
   "PRODUCT_NAME": "Product name",
-  "PRODUCT_CATEGORY": "Product category"
+  "PRODUCT_CATEGORY": "Product category",
+  "TYPE_CLIENT": "Type client",
+  "SALES": "Sales"
 }
