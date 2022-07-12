@@ -1,1 +1,12 @@
 /* You can add main module styles to this file */
+span{
+    background-color: gainsboro;
+    margin-left: 5%;
+    border: solid 1px crimson;
+    padding: 5%;
+}
+span:hover{
+    background-color: cornsilk;
+    border: solid 2px crimson;
+    cursor: default;
+}

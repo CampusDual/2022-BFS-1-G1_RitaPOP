@@ -2,13 +2,16 @@ package com.grupo4.ritapop.model.core.service;
 
 
 import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+import com.ontimize.jee.common.dto.EntityResultMapImpl;
+import com.ontimize.jee.common.services.user.UserInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.grupo4.ritapop.api.core.service.IUserService;
@@ -48,6 +51,17 @@ public class UserService implements IUserService {
 		Map<Object, Object> attrMap = new HashMap<>();
 		attrMap.put("user_down_date", new Timestamp(Calendar.getInstance().getTimeInMillis()));
 		return this.daoHelper.update(this.userDao, attrMap, keyMap);
+	}
+
+	public EntityResult sessionProfileQuery(Map<?, ?> keyMap, List<?> attrList){
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		UserInformation p = (UserInformation) authentication.getPrincipal();
+		Collection<GrantedAuthority> aut = p.getAuthorities();
+		Optional<GrantedAuthority> roles = aut.stream().findFirst();
+		String rol = roles.get().getAuthority();
+		HashMap<String,Object> hashMap = new HashMap<>();
+		hashMap.put("rol",rol);
+		return new EntityResultMapImpl(hashMap);
 	}
 
 }

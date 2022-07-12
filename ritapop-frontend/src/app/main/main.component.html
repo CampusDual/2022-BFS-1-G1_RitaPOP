@@ -1,4 +1,12 @@
 <o-app-layout show-language-selector="no">
-  <router-outlet></router-outlet>
-  <o-app-layout-header>hola hola</o-app-layout-header>
+  <o-app-layout-header position="end">
+    <o-form attr="roleform" editable-detail="no" show-header="no">
+      <o-text-input placeholder='{{ "ADMIN" | oTranslate }}' float-label="always" appearance="legacy" label='{{ "LOGGED_AS" | oTranslate }}' attr="badmin" read-only="yes" required="no"
+      ></o-text-input>
+      <o-text-input placeholder='{{ "MANAGER" | oTranslate }}' float-label="always" appearance="legacy" label='{{ "LOGGED_AS" | oTranslate }}' attr="bmanager" read-only="yes" required="no"
+      ></o-text-input>
+    </o-form>
+  </o-app-layout-header>
+  <o-user-info-configuration show-profile="no" show-settings="no">
+  </o-user-info-configuration>
 </o-app-layout>

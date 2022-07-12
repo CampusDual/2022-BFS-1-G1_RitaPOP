@@ -20,6 +20,9 @@
   "FOOTER_CREATED_BY": "Created by Imatia Innovation",
   "FOOTER_RIGHTS": "All rights reserved",
   "ERROR_EMPTY_USER_PASS": "Username and password fields cant be empty",
+  "ADMIN": "Administrator",
+  "MANAGER": "Manager",
+  "LOGGED_AS": "Logged as:"
   "CLIENT": "Client",
   "NAME": "Name",
   "SURNAME": "Surname",
@@ -39,3 +42,4 @@
   "TYPE_CLIENT": "Type client",
   "SALES": "Sales"
 }
+
