@@ -64,13 +64,16 @@ INSERT INTO PUBLIC.TRANSACTIONS VALUES (3, 3, 4, '2021-06-30', '2021-07-04', 800
 ALTER TABLE PUBLIC.TROLE ADD PERMISSIONS VARCHAR(16777216) DEFAULT '{"menu": [{"attr": "home","visible": false,"enabled": false},{"attr": "client","visible": false,"enabled": false},{"attr": "transaction","visible": false,"enabled": false},{"attr": "logout","visible": false,"enabled": false}]}' NOT NULL;
 -- Modifica los permisos de administrador
 UPDATE PUBLIC.TROLE
+
 SET PERMISSIONS = ('{"components": [{"attr": "roleform","selector": "o-form","components": [{ "attr": "badmin", "visible": true, "enabled": true },{ "attr": "bmanager", "visible": false, "enabled": false }]}],"menu": [{ "attr": "home", "visible": true, "enabled": true },{ "attr": "client", "visible": true, "enabled": true },{ "attr": "transaction", "visible": true, "enabled": true },{ "attr": "logout", "visible": true, "enabled": true }]}')
+
 WHERE ROLENAME = 'admin';
 -- Crea el rol de gestor
 INSERT INTO PUBLIC.TROLE (ROLENAME, XMLCLIENTPERMISSION)
 VALUES ('gestor', '<?xml version="1.0" encoding="UTF-8"?><security></security>');
 -- Modifica los permisos de gestor
 UPDATE PUBLIC.TROLE
+
 SET PERMISSIONS = ('{"components": [{"attr": "roleform","selector": "o-form","components": [{ "attr": "badmin", "visible": false, "enabled": false },{ "attr": "bmanager", "visible": true, "enabled": true }]}],"menu": [{ "attr": "home", "visible": true, "enabled": true },{ "attr": "client", "visible": true, "enabled": true },{ "attr": "transaction", "visible": true, "enabled": true },{ "attr": "logout", "visible": true, "enabled": true }]}')
 WHERE ROLENAME = 'gestor';
 

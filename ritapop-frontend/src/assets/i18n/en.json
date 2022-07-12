@@ -23,4 +23,23 @@
   "ADMIN": "Administrator",
   "MANAGER": "Manager",
   "LOGGED_AS": "Logged as:"
+  "CLIENT": "Client",
+  "NAME": "Name",
+  "SURNAME": "Surname",
+  "NIF": "NIF",
+  "BIRTH_DATE": "Birth date",
+  "ID_TRANSACTION": "ID",
+  "TRANSACTIONS": "Transactions",
+  "SELLER_CLI": "Seller client",
+  "BUYER_CLI": "Buyer client",
+  "NIF_SELLER": "NIF Seller",
+  "NIF_BUYER": "NIF Buyer",
+  "START_DATE": "Start date",
+  "END_DATE": "End date",
+  "PRICE": "Price",
+  "PRODUCT_NAME": "Product name",
+  "PRODUCT_CATEGORY": "Product category",
+  "TYPE_CLIENT": "Type client",
+  "SALES": "Sales"
 }
+

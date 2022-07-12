@@ -20,7 +20,28 @@
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
   "FOOTER_RIGHTS": "Todos los derechos reservados",
   "ERROR_EMPTY_USER_PASS": "Los campos de usuario y contraseña no pueden estar vacíos",
+
   "ADMIN": "Administrador",
   "MANAGER": "Gestor",
   "LOGGED_AS": "Registrado como:"
+
+  "CLIENT": "Cliente",
+  "NAME": "Nombre",
+  "SURNAME": "Apellidos",
+  "NIF": "NIF",
+  "BIRTH_DATE": "Fecha de nacimiento",
+  "ID_TRANSACTIONS": "ID",
+  "TRANSACTIONS": "Transacciones",
+  "SELLER_CLI": "Cliente vendedor",
+  "BUYER_CLI": "Cliente comprador",
+  "NIF_SELLER": "NIF vendedor",
+  "NIF_BUYER": "NIF comprador",
+  "START_DATE": "Fecha de inicio",
+  "END_DATE": "Fecha fin",
+  "PRICE": "Precio",
+  "PRODUCT_NAME": "Nombre del producto",
+  "PRODUCT_CATEGORY": "Categoria de producto",
+  "TYPE_CLIENT": "Tipo de cliente",
+  "SALES": "Ventas"
 }
+
