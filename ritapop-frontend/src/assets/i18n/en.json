@@ -22,7 +22,7 @@
   "ERROR_EMPTY_USER_PASS": "Username and password fields cant be empty",
   "ADMIN": "Administrator",
   "MANAGER": "Manager",
-  "LOGGED_AS": "Logged as:"
+  "LOGGED_AS": "Logged as:",
   "CLIENT": "Client",
   "NAME": "Name",
   "SURNAME": "Surname",
