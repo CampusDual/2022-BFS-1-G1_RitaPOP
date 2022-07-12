@@ -35,5 +35,7 @@
   "END_DATE": "Fecha fin",
   "PRICE": "Precio",
   "PRODUCT_NAME": "Nombre del producto",
-  "PRODUCT_CATEGORY": "Categoria de producto"
+  "PRODUCT_CATEGORY": "Categoria de producto",
+  "TYPE_CLIENT": "Tipo de cliente",
+  "SALES": "Ventas"
 }

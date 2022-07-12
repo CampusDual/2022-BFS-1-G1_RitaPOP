@@ -39,12 +39,8 @@ INSERT INTO PUBLIC.CLIENT VALUES (2, 'JAVIER', 'FANDINO CASAL', '01275066S', '19
 -- insercion de datos
 INSERT INTO PUBLIC.CLIENT VALUES (3, 'CINTA', 'TAFUR', '03144239R', '1979-01-16');
 INSERT INTO PUBLIC.CLIENT VALUES (4, 'TOMAS', 'CARRALERO', '28832909V', '1981-09-16');
-
 INSERT INTO PUBLIC.TRANSACTIONS VALUES (1, 1, 2, '2022-07-04', NULL, 120.50, 'RATON', 'PC');
 INSERT INTO PUBLIC.TRANSACTIONS VALUES (2, 3, 4, '2022-06-30', '2022-07-04', 1000, 'PORTATIL', 'PC');
-
--- modificar tabla transactions
-DROP TABLE PUBLIC.TRANSACTIONS CASCADE;
 
 -- FIN cambios para FG4-28 FECHA: 04-07-2022 15:00
   
@@ -61,8 +57,8 @@ UPDATE PUBLIC.CLIENT SET PURCHASES = 16, SALES = 6, VIP = FALSE WHERE ID = 3;
 UPDATE PUBLIC.CLIENT SET PURCHASES = 25, SALES = 8, VIP = FALSE WHERE ID = 4;
 
 -- FIN cambios para FG4-2 FECHA: 07-07-2022 15:00
-
 -- INICIO Cambios para FG4-26 FECHA: 08-07-2022 14:34
+INSERT INTO PUBLIC.TRANSACTIONS VALUES (3, 3, 4, '2021-06-30', '2021-07-04', 800, 'TELEFONO', 'TELEFONO');
 
 -- Crea la columna de permisos por defecto
 ALTER TABLE PUBLIC.TROLE ADD PERMISSIONS VARCHAR(16777216) DEFAULT '{"menu": [{"attr": "home","visible": false,"enabled": false},{"attr": "client","visible": false,"enabled": false},{"attr": "transaction","visible": false,"enabled": false},{"attr": "logout","visible": false,"enabled": false}]}' NOT NULL;
@@ -78,5 +74,5 @@ UPDATE PUBLIC.TROLE
 SET PERMISSIONS = ('{"menu": [{"attr": "home","visible": true,"enabled": true},{"attr": "client","visible": true,"enabled": true},{"attr": "transaction","visible": true,"enabled": true},{"attr": "logout","visible": true,"enabled": true}]}')
 WHERE ROLENAME = 'gestor';
 
--- FIN Cambios para FG4-26 FECHA: 08-07-2022 14:34
-     
+-- FIN Cambios para FG4-26 FECHA: 08-07-2022 15:00
+    
