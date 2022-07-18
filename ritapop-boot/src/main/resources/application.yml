@@ -21,7 +21,7 @@ ontimize:
             - DELETE
    jdbc:
       name-convention: upper
-      sqlhandler: hsqldb
+      sqlhandler: postgresql
       sql-condition-processor:
          uppper-string: true
          upper-like: true
@@ -64,10 +64,10 @@ server:
       mime-types: application/json, application/xml
 spring:
    datasource:
-      driver-class-name: org.hsqldb.jdbcDriver
-      jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB
-      username: SA
-      password:
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://45.84.210.174:65432/Fullstack_2022_1_G4
+      username: Fullstack_2022_1_G4
+      password: 2OA0MFMzBZJbOyam1q
       initial-size: 10
       test-on-borrow: true
    main:
