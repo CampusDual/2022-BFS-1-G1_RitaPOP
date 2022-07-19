@@ -34,12 +34,13 @@
   "BUYER_CLI": "Buyer client",
   "NIF_SELLER": "NIF Seller",
   "NIF_BUYER": "NIF Buyer",
-  "START_DATE": "Start date",
-  "END_DATE": "End date",
+  "START_DATE": "Payment date",
+  "END_DATE": "Date of delivery",
   "PRICE": "Price",
   "PRODUCT_NAME": "Product name",
   "PRODUCT_CATEGORY": "Product category",
   "TYPE_CLIENT": "Type client",
-  "SALES": "Sales"
+  "SALES": "Sales",
+  "PAYMENT_METHOD": "Payment method"
 }
 

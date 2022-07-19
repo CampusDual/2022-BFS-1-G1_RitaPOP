@@ -21,4 +21,5 @@ public class TransactionDao extends OntimizeJdbcDaoSupport {
  public static final String QUERY_OFFER_DETAILS = "details";
  public static final String ATTR_NIF_SELLER = "NIF_SELLER";
  public static final String ATTR_NIF_BUYER = "NIF_BUYER";
+ public static final String ATTR_PAYMENT_METHOD = "PAYMENT_METHOD";
 }
