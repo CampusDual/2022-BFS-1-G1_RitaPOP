@@ -6,22 +6,22 @@
 	catalog="" schema="${mainschema}" table="TRANSACTIONS"
 	datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
 	<DeleteKeys>
-		<Column>ID</Column>
+		<Column>id</Column>
 	</DeleteKeys>
 	<UpdateKeys>
-		<Column>ID</Column>
+		<Column>id</Column>
 	</UpdateKeys>
-	<GeneratedKey>ID</GeneratedKey>
+	<GeneratedKey>id</GeneratedKey>
 
 	<Queries>
 		<Query id="details">
 			<AmbiguousColumns>
 				<AmbiguousColumn name="ID_TRANSACTION" prefix="T"
-					databaseName="ID" />
+					databaseName="id" />
 				<AmbiguousColumn name="ID_SELLER" prefix="C1"
-					databaseName="ID" />
+					databaseName="id" />
 				<AmbiguousColumn name="ID_BUYER" prefix="C2"
-					databaseName="ID" />
+					databaseName="id" />
 				<AmbiguousColumn name="NIF_SELLER" prefix="C1"
 					databaseName="NIF" />
 				<AmbiguousColumn name="NIF_BUYER" prefix="C2"
@@ -31,9 +31,9 @@
    <![CDATA[
      SELECT #COLUMNS# FROM PUBLIC.TRANSACTIONS T
 		INNER JOIN PUBLIC.CLIENT C1 ON
-		T.SELLER_CLI = C1.ID
+		T.SELLER_CLI = C1.id
 		INNER JOIN PUBLIC.CLIENT C2 ON
-		T.BUYER_CLI = C2.ID
+		T.BUYER_CLI = C2.id
      #WHERE#
    ]]>
    </Sentence>

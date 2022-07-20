@@ -1,9 +1,6 @@
 package com.grupo4.ritapop.model.core.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +21,8 @@ public class TransactionService implements ITransactionService {
 	@Autowired
 	private TransactionDao transactionDao;
 	@Autowired
+	private ClientDao clientDao;
+	@Autowired
 	private DefaultOntimizeDaoHelper daoHelper;
 	@Autowired
 	private ClientService clientService;
@@ -33,23 +32,36 @@ public class TransactionService implements ITransactionService {
 			throws OntimizeJEERuntimeException {
 		return this.daoHelper.query(this.transactionDao, keyMap, attrList);
 	}
+
+
 	
 	@Override
 	public EntityResult transactionInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-		Map<String, Object> nonTransactionData = removeNonRelatedData(attrMap, TransactionDao.ATTR_SELLER_CLI,
-				TransactionDao.ATTR_BUYER_CLI);
-		this.insertNonRelatedData(nonTransactionData);
-		attrMap.putAll(nonTransactionData);
+
+		int id_seller = getIdFromNIF(attrMap.get("NIF_SELLER"));
+		attrMap.put("SELLER_CLI",id_seller);
+		int id_buyer = getIdFromNIF(attrMap.get("NIF_BUYER"));
+		attrMap.put("BUYER_CLI",id_buyer);
 		return this.daoHelper.insert(this.transactionDao, attrMap);
+	}
+
+	public int getIdFromNIF(Object nif){
+		List<String> atributos = new ArrayList<>();
+		atributos.add("id");
+		Map<String,Object> valores = new HashMap<>();
+		valores.put("nif",nif);
+		EntityResult id_entity_result = this.daoHelper.query(this.clientDao, valores,atributos);
+		Object id_object = id_entity_result.get("id");
+		String id_string = id_object.toString();
+		String id_string_final = id_string.replace("[","");
+		id_string_final = id_string_final.replace("]","");
+		int id = Integer.parseInt(id_string_final);
+		return id;
 	}
 
 	@Override
 	public EntityResult transactionUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
 			throws OntimizeJEERuntimeException {
-		Map<String, Object> nonTransactionData = removeNonRelatedData(attrMap, TransactionDao.ATTR_SELLER_CLI,
-				TransactionDao.ATTR_BUYER_CLI);
-		this.insertNonRelatedData(nonTransactionData);
-		attrMap.putAll(nonTransactionData);
 		return this.daoHelper.update(this.transactionDao, attrMap, keyMap);
 	}
 
@@ -58,49 +70,6 @@ public class TransactionService implements ITransactionService {
 		return this.daoHelper.delete(this.transactionDao, keyMap);
 	}
 
-	private Map<String, Object> removeNonRelatedData(Map<String, Object> attrMap, String... attrToExclude) {
-		HashMap<String, Object> data = new HashMap<String, Object>();
-		for (String attr : attrToExclude) {
-			if (attrMap.containsKey(attr) && attrMap.get(attr) instanceof String) {
-				data.put(attr, attrMap.remove(attr));
-			}
-		}
-		return data;
-	}
-
-	private void insertNonRelatedData(Map<String, Object> nonTransactionData) {
-		for (Entry<String, Object> entry : nonTransactionData.entrySet()) {
-			Map<String, Object> data = new HashMap<String, Object>();
-			List<String> attr = new ArrayList<String>();
-			EntityResult toret, query;
-			switch (entry.getKey()) {
-			case TransactionDao.ATTR_SELLER_CLI:
-				data.put(ClientDao.ATTR_NIF, entry.getValue());
-				attr.add(ClientDao.ATTR_ID);
-				query = this.clientService.clientQuery(data, attr);
-				if (query.calculateRecordNumber() > 0) {
-					entry.setValue(query.getRecordValues(0).get(ClientDao.ATTR_ID));
-				} else {
-					toret = this.clientService.clientInsert(data);
-					entry.setValue(toret.get(ClientDao.ATTR_ID));
-				}
-				break;
-			case TransactionDao.ATTR_BUYER_CLI:
-				data.put(ClientDao.ATTR_NIF, entry.getValue());
-				attr.add(ClientDao.ATTR_ID);
-				query = this.clientService.clientQuery(data, attr);
-				if (query.calculateRecordNumber() > 0) {
-					entry.setValue(query.getRecordValues(0).get(ClientDao.ATTR_ID));
-				} else {
-					toret = this.clientService.clientInsert(data);
-					entry.setValue(toret.get(ClientDao.ATTR_ID));
-				}
-				break;
-			default:
-				break;
-			}
-		}
-	}
 	@Override
 	 public EntityResult transactionDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 	   throws OntimizeJEERuntimeException {
