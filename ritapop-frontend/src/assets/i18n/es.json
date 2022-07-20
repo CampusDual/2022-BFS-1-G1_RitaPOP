@@ -40,6 +40,10 @@
   "PRODUCT_NAME": "Nombre del producto",
   "PRODUCT_CATEGORY": "Categoria de producto",
   "TYPE_CLIENT": "Tipo de cliente",
-  "SALES": "Ventas"
+  "SALES": "Ventas",
+  "USERS": "Usuarios",
+  "PHONE": "Teléfono",
+  "USER_PERSONAL_INFORMATION": "Información Personal",
+  "USER_": "User Id."
 }
 

@@ -400,4 +400,7 @@ dist
 *DB.script
 *DB.properties
 
+# macos system files
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,angular,node,eclipse,intellij+all,visualstudiocode

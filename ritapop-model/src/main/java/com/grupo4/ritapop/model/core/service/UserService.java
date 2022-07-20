@@ -4,6 +4,7 @@ package com.grupo4.ritapop.model.core.service;
 import java.sql.Timestamp;
 import java.util.*;
 
+import com.grupo4.ritapop.model.core.dao.UserRoleDao;
 import com.ontimize.jee.common.dto.EntityResultMapImpl;
 import com.ontimize.jee.common.services.user.UserInformation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class UserService implements IUserService {
 	@Autowired
 	private DefaultOntimizeDaoHelper daoHelper;
 
+	// @Autowired
+	// private UserRoleDao userRoleDao;
+
 	public void loginQuery(Map<?, ?> key, List<?> attr) {
 	}
 
@@ -41,6 +45,23 @@ public class UserService implements IUserService {
 
 	public EntityResult userInsert(Map<?, ?> attrMap) {
 		return this.daoHelper.insert(userDao, attrMap);
+//		EntityResult insertUser = this.daoHelper.insert(userDao, attrMap);
+//
+//		if (insertUser.getCode() != EntityResult.OPERATION_WRONG) {
+//			Map<String, Object> userRoleAttr = new HashMap<String, Object>();
+//			userRoleAttr.put("user_", attrMap.get("user_"));
+//			userRoleAttr.put("id_rolename", attrMap.get("id_rolename"));
+//			EntityResult insert = this.daoHelper.insert(this.userRoleDao, userRoleAttr);
+//
+//			if (insert.getCode() != EntityResult.OPERATION_WRONG) {
+//				return insertUser;
+//			}
+//		}
+//
+//		EntityResult toret = new EntityResultMapImpl();
+//		toret.setCode(EntityResult.OPERATION_WRONG);
+//		toret.setMessage("No se ha podido añadir el usuario");
+//		return toret;
 	}
 
 	public EntityResult userUpdate(Map<?, ?> attrMap, Map<?, ?> keyMap) {
