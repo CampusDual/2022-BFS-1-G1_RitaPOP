@@ -1,0 +1,13 @@
+<o-form-layout-manager title="{{'USERS' | oTranslate }}" separator=" " mode="dialog" label-columns="NAME;SURNAME">
+  <div fxFill>
+    <o-table attr="usersTable" service="users" entity="user" keys="USER_"
+      columns="USER_;NIF;NAME;EMAIL;SURNAME;PHOTO;PHONE"
+      visible-columns="NIF;NAME;SURNAME;EMAIL;PHOTO;PHONE"
+      query-rows="15">
+      <o-table-column attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="no" empty-image="assets/images/no-image.png"
+        image-type="base64" width="150px"></o-table-column>
+      <o-table-column attr="NAME" title="NAME" width="150px"></o-table-column>
+      <o-table-column attr="SURNAME" title="SURNAME" width="150px"></o-table-column>
+    </o-table>
+  </div>
+</o-form-layout-manager>
