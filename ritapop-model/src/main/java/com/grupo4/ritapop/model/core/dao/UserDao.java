@@ -26,5 +26,8 @@ public class UserDao extends OntimizeJdbcDaoSupport {
 	public static final String SCHEMA        = "db_schema";
 	public static final String CREATION_DATE = "user_creation_date";
 	public static final String DOWN_DATE     = "user_down_date";
+	public static final String NIF     		 = "user_nif";
+	public static final String PHOTO     	 = "user_photo";
+	public static final String PHONE     	 = "user_phone";
 
 }
