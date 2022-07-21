@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TransactionsHomeComponent } from './transactions-home/transactions-home.component';
 import { TransactionsNewComponent } from './transactions-new/transactions-new.component';
+import { TransactionsDetailComponent } from './transactions-detail/transactions-detail.component';
 
 
 const routes: Routes = [{
@@ -10,7 +11,12 @@ const routes: Routes = [{
 },
 {
   path:"new",
-  component: TransactionsNewComponent}];
+  component: TransactionsNewComponent},
+{
+  path:":ID_TRANSACTION",
+  component: TransactionsDetailComponent}
+
+];
 
 
 @NgModule({

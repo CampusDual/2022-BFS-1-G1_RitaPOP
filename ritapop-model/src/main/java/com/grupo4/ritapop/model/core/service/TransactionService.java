@@ -46,11 +46,11 @@ public class TransactionService implements ITransactionService {
 	}
 
 	public int getIdFromNIF(Object nif){
-		List<String> atributos = new ArrayList<>();
-		atributos.add("id");
-		Map<String,Object> valores = new HashMap<>();
-		valores.put("nif",nif);
-		EntityResult id_entity_result = this.daoHelper.query(this.clientDao, valores,atributos);
+		List<String> attrList = new ArrayList<>();
+		attrList.add("id");
+		Map<String,Object> keyMap = new HashMap<>();
+		keyMap.put("nif",nif);
+		EntityResult id_entity_result = this.daoHelper.query(this.clientDao, keyMap,attrList);
 		Object id_object = id_entity_result.get("id");
 		String id_string = id_object.toString();
 		String id_string_final = id_string.replace("[","");

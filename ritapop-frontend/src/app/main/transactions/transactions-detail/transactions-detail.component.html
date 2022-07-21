@@ -1,0 +1,24 @@
+
+<o-form service="transactions" entity="transaction"  keys="ID_TRANSACTION" header-actions="R;I;U;D" show-header-navigation="no">
+ <o-row class="todo">
+   <o-column title="{{ 'TRANSACTION' | oTranslate }}" fxFlex="70" >
+     <o-row class="todoRowOne">
+       <o-nif-input class="input-padding" attr="NIF_SELLER" fxFlex="30" required="yes"></o-nif-input>
+       <o-nif-input class="input-padding" attr="NIF_BUYER" fxFlex="30" required="yes"></o-nif-input>
+     </o-row>
+     <o-row>
+      <o-date-input attr="START_DATE" fxFlex="30"></o-date-input>
+      <o-date-input attr="END_DATE" fxFlex="30"></o-date-input>
+     </o-row>
+     <o-row>
+       <o-text-input attr="PAYMENT_METHOD" fxFlex="30"></o-text-input>
+       <o-text-input attr="PRICE" fxFlex="30"></o-text-input>
+     </o-row>
+     <o-row>
+      <o-text-input attr="PRODUCT_NAME"  fxFlex="30"></o-text-input>
+      <o-text-input attr="PRODUCT_CATEGORY"  fxFlex="30"></o-text-input>
+    </o-row>
+   </o-column>
+ </o-row>
+</o-form>
+
