@@ -1,5 +1,6 @@
 
-<o-form service="transactions" entity="transaction"  keys="ID_TRANSACTION" header-actions="R;I;U;D" show-header-navigation="no">
+<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTION" header-actions="R;I;D" show-header-navigation="no">
+  <o-integer-input attr="ID_TRANSACTION" sql-type="INTEGER" enabled="no"></o-integer-input>
  <o-row class="todo">
    <o-column title="{{ 'TRANSACTION' | oTranslate }}" fxFlex="70" >
      <o-row class="todoRowOne">
