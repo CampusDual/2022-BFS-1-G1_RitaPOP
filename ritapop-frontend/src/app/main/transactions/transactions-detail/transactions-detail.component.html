@@ -1,5 +1,4 @@
-
-<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTION" header-actions="R;I;D" show-header-navigation="no">
+<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTION"  header-actions="R;U;D" keys-sql-types="INTEGER" show-header-navigation="yes">
   <o-integer-input attr="ID_TRANSACTION" sql-type="INTEGER" enabled="no"></o-integer-input>
  <o-row class="todo">
    <o-column title="{{ 'TRANSACTION' | oTranslate }}" fxFlex="70" >
@@ -13,7 +12,7 @@
      </o-row>
      <o-row>
        <o-text-input attr="PAYMENT_METHOD" fxFlex="30"></o-text-input>
-       <o-text-input attr="PRICE" fxFlex="30"></o-text-input>
+       <o-currency-input attr="PRICE" fxFlex="30"></o-currency-input>
      </o-row>
      <o-row>
       <o-text-input attr="PRODUCT_NAME"  fxFlex="30"></o-text-input>

@@ -75,4 +75,33 @@ public class TransactionService implements ITransactionService {
 	   throws OntimizeJEERuntimeException {
 	  return this.daoHelper.query(this.transactionDao, keyMap, attrList, transactionDao.QUERY_OFFER_DETAILS);
 	 }
+	
+
+	@Override
+	public EntityResult transactionDetailsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+
+		int id_seller = getIdFromNIF(attrMap.get("NIF_SELLER"));
+		attrMap.put("SELLER_CLI",id_seller);
+		int id_buyer = getIdFromNIF(attrMap.get("NIF_BUYER"));
+		attrMap.put("BUYER_CLI",id_buyer);
+		return this.daoHelper.insert(this.transactionDao, attrMap);
+	}
+	
+	
+	@Override
+	public EntityResult transactionDetailsDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		return this.daoHelper.delete(this.transactionDao, keyMap);
+	}
+	
+	
+	@Override
+	public EntityResult transactionDetailsUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.update(this.transactionDao,attrMap, keyMap);
+	}
+
+	
+	
+	
+	
 }
