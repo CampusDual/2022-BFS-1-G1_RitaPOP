@@ -44,6 +44,8 @@
   "USERS": "Usuarios",
   "PHONE": "Teléfono",
   "USER_PERSONAL_INFORMATION": "Información Personal",
-  "USER_": "User Id."
+  "USER_": "Id. de Usuario",
+  "ROLENAME": "Rol",
+  "EMAIL": "Email"
 }
 

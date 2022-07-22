@@ -14,7 +14,10 @@
         <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input>
       </o-row>
       <o-row>
-        <o-email-input attr="EMAIL" fxFlex></o-email-input>
+        <o-email-input attr="EMAIL" fxFlex required="yes"></o-email-input>
+      </o-row>
+      <o-row>
+        <o-combo attr="id_rolename" label="ROLENAME" service="users" entity="role" keys="id_rolename" columns="id_rolename;rolename" visible-columns="rolename" value-column="id_rolename"></o-combo>
       </o-row>
     </o-column>
   </o-row>

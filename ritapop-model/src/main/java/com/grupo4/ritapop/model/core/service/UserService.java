@@ -4,6 +4,7 @@ package com.grupo4.ritapop.model.core.service;
 import java.sql.Timestamp;
 import java.util.*;
 
+import com.grupo4.ritapop.model.core.dao.RoleDao;
 import com.grupo4.ritapop.model.core.dao.UserRoleDao;
 import com.ontimize.jee.common.dto.EntityResultMapImpl;
 import com.ontimize.jee.common.services.user.UserInformation;
@@ -31,8 +32,11 @@ public class UserService implements IUserService {
 	@Autowired
 	private DefaultOntimizeDaoHelper daoHelper;
 
-	// @Autowired
-	// private UserRoleDao userRoleDao;
+	@Autowired
+	private RoleDao roleDao;
+
+//	@Autowired
+//	private UserRoleDao userRoleDao;
 
 	public void loginQuery(Map<?, ?> key, List<?> attr) {
 	}
@@ -83,6 +87,27 @@ public class UserService implements IUserService {
 		HashMap<String,Object> hashMap = new HashMap<>();
 		hashMap.put("rol",rol);
 		return new EntityResultMapImpl(hashMap);
+	}
+
+	@Override
+	public EntityResult roleQuery(Map<?, ?> keyMap, List<?> attrList) {
+		return this.daoHelper.query(roleDao, keyMap, attrList);
+
+	}
+
+	@Override
+	public EntityResult roleInsert(Map<?, ?> attrMap) {
+		return this.daoHelper.insert(roleDao, attrMap);
+	}
+
+	@Override
+	public EntityResult roleUpdate(Map<?, ?> attrMap, Map<?, ?> keyMap) {
+		return this.daoHelper.update(roleDao, attrMap, keyMap);
+	}
+
+	@Override
+	public EntityResult roleDelete(Map<?, ?> keyMap) {
+		return this.daoHelper.delete(roleDao, keyMap);
 	}
 
 }
