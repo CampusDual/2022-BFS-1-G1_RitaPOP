@@ -20,6 +20,7 @@ import com.grupo4.ritapop.api.core.service.IUserService;
 import com.grupo4.ritapop.model.core.dao.UserDao;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Lazy
@@ -35,8 +36,8 @@ public class UserService implements IUserService {
 	@Autowired
 	private RoleDao roleDao;
 
-//	@Autowired
-//	private UserRoleDao userRoleDao;
+	@Autowired
+	private UserRoleDao userRoleDao;
 
 	public void loginQuery(Map<?, ?> key, List<?> attr) {
 	}
@@ -47,25 +48,18 @@ public class UserService implements IUserService {
 		return this.daoHelper.query(userDao, keyMap, attrList);
 	}
 
+	@Transactional(rollbackFor = Exception.class)
 	public EntityResult userInsert(Map<?, ?> attrMap) {
-		return this.daoHelper.insert(userDao, attrMap);
-//		EntityResult insertUser = this.daoHelper.insert(userDao, attrMap);
-//
-//		if (insertUser.getCode() != EntityResult.OPERATION_WRONG) {
-//			Map<String, Object> userRoleAttr = new HashMap<String, Object>();
-//			userRoleAttr.put("user_", attrMap.get("user_"));
-//			userRoleAttr.put("id_rolename", attrMap.get("id_rolename"));
-//			EntityResult insert = this.daoHelper.insert(this.userRoleDao, userRoleAttr);
-//
-//			if (insert.getCode() != EntityResult.OPERATION_WRONG) {
-//				return insertUser;
-//			}
-//		}
-//
-//		EntityResult toret = new EntityResultMapImpl();
-//		toret.setCode(EntityResult.OPERATION_WRONG);
-//		toret.setMessage("No se ha podido añadir el usuario");
-//		return toret;
+		EntityResult insertNewUser;
+		Map<String,Object> attrUserRoleMap = new HashMap<>();
+		attrUserRoleMap.put("USER_",attrMap.get("USER_"));
+		attrUserRoleMap.put(UserRoleDao.ATTR_ID_ROLENAME,attrMap.get(UserDao.ATTR_ID_ROLENAME));
+		attrMap.remove(RoleDao.ID_ROLENAME);
+		insertNewUser = this.daoHelper.insert(this.userDao, attrMap);
+		if(insertNewUser.getCode() == EntityResult.OPERATION_SUCCESSFUL){
+			insertNewUser = this.daoHelper.insert(this.userRoleDao,attrUserRoleMap);
+		}
+		return insertNewUser;
 	}
 
 	public EntityResult userUpdate(Map<?, ?> attrMap, Map<?, ?> keyMap) {
