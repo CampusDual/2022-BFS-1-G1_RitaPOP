@@ -14,7 +14,7 @@ const routes: Routes =  [{
   component: UsersNewComponent
 },
 {
-  path : ':USER_',
+  path : ':USER_TUSER',
   component: UsersDetailComponent
 }];
 

@@ -1,5 +1,5 @@
-<o-form service="users" entity="user" keys="USER_" header-actions="R;I;U;D" show-header-navigation="no">
-  <o-text-input attr="USER_" sql-type="OTHER" enabled="no"></o-text-input>
+<o-form service="users" entity="userDetails" keys="USER_TUSER" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-text-input attr="USER_TUSER" sql-type="OTHER" enabled="no"></o-text-input>
   <o-row>
     <o-column>
       <o-image id="PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
@@ -15,6 +15,9 @@
       </o-row>
       <o-row>
         <o-email-input attr="EMAIL" fxFlex></o-email-input>
+      </o-row>
+      <o-row>
+        <o-combo attr="ID_ROLENAME" label="ROLENAME" service="users" entity="role" keys="ID_ROLENAME" columns="ID_ROLENAME;ROLENAME" visible-columns="ROLENAME" value-column="ID_ROLENAME"></o-combo>
       </o-row>
     </o-column>
   </o-row>

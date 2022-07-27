@@ -1,7 +1,7 @@
 <o-form-layout-manager title="{{'USERS' | oTranslate }}" separator=" " mode="dialog" label-columns="NAME;SURNAME">
   <div fxFill>
-    <o-table attr="usersTable" service="users" entity="user" keys="USER_"
-      columns="USER_;NIF;NAME;EMAIL;SURNAME;PHOTO;PHONE"
+    <o-table attr="usersTable" service="users" entity="userDetails" keys="USER_TUSER"
+      columns="USER_TUSER;NIF;NAME;EMAIL;SURNAME;PHOTO;PHONE"
       visible-columns="NIF;NAME;SURNAME;EMAIL;PHOTO;PHONE"
       query-rows="15">
       <o-table-column attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="no" empty-image="assets/images/no-image.png"
