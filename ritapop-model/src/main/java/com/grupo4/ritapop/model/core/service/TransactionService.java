@@ -73,7 +73,7 @@ public class TransactionService implements ITransactionService {
 	@Override
 	 public EntityResult transactionDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 	   throws OntimizeJEERuntimeException {
-	  return this.daoHelper.query(this.transactionDao, keyMap, attrList, transactionDao.QUERY_OFFER_DETAILS);
+	  return this.daoHelper.query(this.transactionDao, keyMap, attrList, TransactionDao.QUERY_OFFER_DETAILS);
 	 }
 	
 
@@ -90,6 +90,8 @@ public class TransactionService implements ITransactionService {
 	
 	@Override
 	public EntityResult transactionDetailsDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		keyMap.put("id", keyMap.get("ID_TRANSACTION"));
+		keyMap.remove("ID_TRANSACTION");
 		return this.daoHelper.delete(this.transactionDao, keyMap);
 	}
 	
@@ -97,11 +99,9 @@ public class TransactionService implements ITransactionService {
 	@Override
 	public EntityResult transactionDetailsUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
 			throws OntimizeJEERuntimeException {
+		keyMap.put("id", keyMap.get("ID_TRANSACTION"));
+		keyMap.remove("ID_TRANSACTION");
 		return this.daoHelper.update(this.transactionDao,attrMap, keyMap);
 	}
-
-	
-	
-	
 	
 }
