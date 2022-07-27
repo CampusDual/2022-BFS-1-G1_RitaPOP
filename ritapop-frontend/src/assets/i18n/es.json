@@ -30,6 +30,7 @@
   "BIRTH_DATE": "Fecha de nacimiento",
   "ID_TRANSACTIONS": "ID",
   "TRANSACTIONS": "Transacciones",
+  "TRANSACTION": "Transacción",
   "SELLER_CLI": "Cliente vendedor",
   "BUYER_CLI": "Cliente comprador",
   "NIF_SELLER": "NIF vendedor",
@@ -41,6 +42,7 @@
   "PRODUCT_CATEGORY": "Categoria de producto",
   "TYPE_CLIENT": "Tipo de cliente",
   "SALES": "Ventas",
-  "PAYMENT_METHOD": "Método de pago"
+  "PAYMENT_METHOD": "Método de pago",
+  "NEW_TRANSACTION": "Nueva transacción"
 }
 
