@@ -11,7 +11,7 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/RoleDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class RoleDao extends OntimizeJdbcDaoSupport{
 
-    public static final String ID_ROLENAME    = "id_rolename";
-    public static final String ROLENAME = "rolename";
+    public static final String ID_ROLENAME    = "ID_ROLENAME";
+    public static final String ROLENAME = "ROLENAME";
 
 }

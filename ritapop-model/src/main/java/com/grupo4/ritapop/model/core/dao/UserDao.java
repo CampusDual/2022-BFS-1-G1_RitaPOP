@@ -30,7 +30,7 @@ public class UserDao extends OntimizeJdbcDaoSupport {
 	public static final String PHOTO     	 = "user_photo";
 	public static final String PHONE     	 = "user_phone";
 
-	public static final String ATTR_USER_        = "user_";
+	public static final String ATTR_USER_        = "USER_";
 	public static final String ATTR_EMAIL        = "email";
 	public static final String ATTR_PASSWORD     = "password";
 	public static final String ATTR_NAME         = "name";
@@ -39,5 +39,8 @@ public class UserDao extends OntimizeJdbcDaoSupport {
 	public static final String ATTR_PHOTO        = "photo";
 	public static final String ATTR_PHONE        = "phone";
 	public static final String ATTR_ID_ROLENAME  = "ID_ROLENAME";
+
+	public static final String QUERY_USER_DETAILS = "details";
+	public static final String ATTR_USER_TUSER    = "USER_TUSER";
 
 }

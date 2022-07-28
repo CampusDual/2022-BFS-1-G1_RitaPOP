@@ -7,6 +7,7 @@ import java.util.*;
 import com.grupo4.ritapop.model.core.dao.RoleDao;
 import com.grupo4.ritapop.model.core.dao.UserRoleDao;
 import com.ontimize.jee.common.dto.EntityResultMapImpl;
+import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.common.services.user.UserInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -48,14 +49,26 @@ public class UserService implements IUserService {
 		return this.daoHelper.query(userDao, keyMap, attrList);
 	}
 
+	@Override
+	public EntityResult userDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.query(this.userDao, keyMap, attrList, userDao.QUERY_USER_DETAILS);
+	}
+
 	@Transactional(rollbackFor = Exception.class)
-	public EntityResult userInsert(Map<?, ?> attrMap) {
+	public EntityResult userInsert(Map<String, Object> attrMap) {
 		EntityResult insertNewUser;
 		Map<String,Object> attrUserRoleMap = new HashMap<>();
-		attrUserRoleMap.put("USER_",attrMap.get("USER_"));
+
+		attrUserRoleMap.put(UserRoleDao.ATTR_USER_,attrMap.get(UserDao.ATTR_USER_TUSER));
 		attrUserRoleMap.put(UserRoleDao.ATTR_ID_ROLENAME,attrMap.get(UserDao.ATTR_ID_ROLENAME));
+
 		attrMap.remove(RoleDao.ID_ROLENAME);
+		attrMap.put(UserDao.ATTR_USER_, attrMap.get(UserDao.ATTR_USER_TUSER));
+		attrMap.remove(UserDao.ATTR_USER_TUSER);
+
 		insertNewUser = this.daoHelper.insert(this.userDao, attrMap);
+
 		if(insertNewUser.getCode() == EntityResult.OPERATION_SUCCESSFUL){
 			insertNewUser = this.daoHelper.insert(this.userRoleDao,attrUserRoleMap);
 		}
