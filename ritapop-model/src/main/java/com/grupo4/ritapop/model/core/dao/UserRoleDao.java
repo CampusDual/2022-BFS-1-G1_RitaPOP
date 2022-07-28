@@ -16,4 +16,5 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 public class UserRoleDao extends OntimizeJdbcDaoSupport {
 	public static final String ATTR_ID_ROLENAME = "ID_ROLENAME";
 	public static final String ATTR_USER_ = "USER_";
+	public static final String ATTR_ID_USER_ROLE = "ID_USER_ROLE";
 }

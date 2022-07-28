@@ -79,6 +79,44 @@ public class UserService implements IUserService {
 		return this.daoHelper.update(userDao, attrMap, keyMap);
 	}
 
+	@Transactional(rollbackFor = Exception.class)
+	public EntityResult userDetailsUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) {
+
+		keyMap.put(UserDao.ATTR_USER_,keyMap.get(UserDao.ATTR_USER_TUSER));
+		keyMap.remove(UserDao.ATTR_USER_TUSER);
+		if(attrMap.containsKey(UserRoleDao.ATTR_ID_ROLENAME)){
+			Map<String,Object> keyUserRoleMap=new HashMap<>();
+			keyUserRoleMap.put(UserRoleDao.ATTR_USER_,keyMap.get(UserDao.ATTR_USER_));
+			List<String> nameColum=new ArrayList<>();
+			nameColum.add(UserRoleDao.ATTR_ID_USER_ROLE);
+			EntityResult idRoleQuery=userRoleQuery(keyUserRoleMap,nameColum);
+			Map<String,Object> attrMapUserRole=new HashMap<>();
+			attrMapUserRole.put(UserRoleDao.ATTR_ID_ROLENAME,attrMap.get(UserRoleDao.ATTR_ID_ROLENAME));
+			attrMap.remove(UserRoleDao.ATTR_ID_ROLENAME);
+			Map<String,Object> keyMapRolUser=new HashMap<>();
+			List<Integer> listIdRoleQuery= (List<Integer>) idRoleQuery.get(UserRoleDao.ATTR_ID_USER_ROLE);
+			keyMapRolUser.put(UserRoleDao.ATTR_ID_USER_ROLE,listIdRoleQuery.get(0));
+			this.daoHelper.update(userRoleDao, attrMapUserRole, keyMapRolUser);
+		}
+		return this.daoHelper.update(userDao, attrMap, keyMap);
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	public EntityResult userDetailsDelete(Map<String, Object> keyMap) {
+		keyMap.put(UserDao.ATTR_USER_,keyMap.get(UserDao.ATTR_USER_TUSER));
+		keyMap.remove(UserDao.ATTR_USER_TUSER);
+		List<String> nameColum=new ArrayList<>();
+		Map<String,Object> keyUserRoleMap=new HashMap<>();
+		keyUserRoleMap.put(UserRoleDao.ATTR_USER_,keyMap.get(UserDao.ATTR_USER_));
+		nameColum.add(UserRoleDao.ATTR_ID_USER_ROLE);
+		EntityResult idRoleQuery=userRoleQuery(keyUserRoleMap,nameColum);
+		Map<String,Object> keyMapRolUser=new HashMap<>();
+		List<Integer> listIdRoleQuery= (List<Integer>) idRoleQuery.get(UserRoleDao.ATTR_ID_USER_ROLE);
+		keyMapRolUser.put(UserRoleDao.ATTR_ID_USER_ROLE,listIdRoleQuery.get(0));
+		this.daoHelper.delete(userRoleDao,keyMapRolUser);
+		return this.daoHelper.delete(userDao,keyMap);
+	}
+
 	public EntityResult userDelete(Map<?, ?> keyMap) {
 		Map<Object, Object> attrMap = new HashMap<>();
 		attrMap.put("user_down_date", new Timestamp(Calendar.getInstance().getTimeInMillis()));
@@ -97,7 +135,7 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public EntityResult roleQuery(Map<?, ?> keyMap, List<?> attrList) {
+	public EntityResult roleQuery(Map<String, Object> keyMap, List<String> attrList) {
 		return this.daoHelper.query(roleDao, keyMap, attrList);
 
 	}
@@ -117,4 +155,9 @@ public class UserService implements IUserService {
 		return this.daoHelper.delete(roleDao, keyMap);
 	}
 
+	@Override
+	public EntityResult userRoleQuery(Map<String, Object> keyMap, List<String> attrList) {
+		return this.daoHelper.query(userRoleDao, keyMap, attrList);
+
+	}
 }
