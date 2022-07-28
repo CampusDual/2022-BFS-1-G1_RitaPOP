@@ -28,6 +28,7 @@
   "SURNAME": "Surname",
   "NIF": "NIF",
   "BIRTH_DATE": "Birth date",
+  "ID_TRANSACTIONS": "ID",
   "ID_TRANSACTION": "ID",
   "TRANSACTIONS": "Transactions",
   "TRANSACTION": "Transaction",
