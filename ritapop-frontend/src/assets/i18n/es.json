@@ -29,13 +29,15 @@
   "NIF": "NIF",
   "BIRTH_DATE": "Fecha de nacimiento",
   "ID_TRANSACTIONS": "ID",
+  "ID_TRANSACTION": "ID",
   "TRANSACTIONS": "Transacciones",
+  "TRANSACTION": "Transacción",
   "SELLER_CLI": "Cliente vendedor",
   "BUYER_CLI": "Cliente comprador",
   "NIF_SELLER": "NIF vendedor",
   "NIF_BUYER": "NIF comprador",
-  "START_DATE": "Fecha de inicio",
-  "END_DATE": "Fecha fin",
+  "START_DATE": "Fecha de pago",
+  "END_DATE": "Fecha de entrega",
   "PRICE": "Precio",
   "PRODUCT_NAME": "Nombre del producto",
   "PRODUCT_CATEGORY": "Categoria de producto",
@@ -46,6 +48,8 @@
   "USER_PERSONAL_INFORMATION": "Información Personal",
   "USER_TUSER": "Usuario",
   "ROLENAME": "Rol",
-  "EMAIL": "Email"
+  "EMAIL": "Email",
+  "PAYMENT_METHOD": "Método de pago",
+  "NEW_TRANSACTION": "Nueva transacción"
 }
 

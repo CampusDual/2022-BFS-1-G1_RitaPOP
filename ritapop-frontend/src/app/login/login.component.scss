@@ -1,3 +1,13 @@
+$color-letter-global : rgb(255, 0, 153);
+$color-global-azul :rgb(4, 211, 188, 0.9);
+$color-fondo-social :   red;
+$color-fondo-social-def :   rgb(255, 0, 153);
+$color-fondo-difuminado : rgb(255, 0, 153, 0.6);
+$color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
+$hover-social: rgba(255,255,255,0.47);
+$color-letter-sociual :   #eaf0fb;
+$color-letter-hover:  black;
+
 .m-top-24 {
   margin-top: 24px;
 }
@@ -22,7 +32,7 @@
     overflow: auto;
 
     .login-bg-container {
-      background-image: url('^assets/images/login_bg_ritapop_big.png');
+      background-image: url('^assets/images/brandingRP-3.png');
       width: calc(100% - 640px);
       background-repeat: no-repeat;
       background-size: cover;
@@ -41,7 +51,7 @@
       top: 0;
       left: 0;
       background: rgba(255, 255, 255);
-      opacity: 0;
+      opacity: .0;
     }
 
     .wrapp-login {
@@ -55,6 +65,8 @@
           padding: 16px;
           min-height: 600px;
           min-width: 368px;
+          color: $color-fondo-social;
+          
         }
 
         .logo-container {
@@ -80,8 +92,17 @@
           margin: 32px 0 0;
           height: 42px;
           font-size: 16px;
+          color: $color-fondo-social-def;
+          background-color: $color-global-azul;
+          //background-color: white;
+          border-radius: 12px;
+          box-shadow: 5px 5px 5px $color-fondo-social-def;
         }
-
+        button:hover{
+          background-color: rgb(255, 0, 153, 0.6);
+          color: black;
+          font-size: 15pt;
+      }
         .dark_text {
           color: #c5c5c5;
           font-size: 9pt;
@@ -89,7 +110,8 @@
 
         .login_info,
         .title_text {
-          font-size: 14px;
+          font-size: 20px;
+          color: $color-letter-global;
         }
 
         .title_text {
@@ -97,8 +119,10 @@
         }
 
         .text {
-          font-size: 12px;
+          font-size: 15px;
           font-weight: normal;
+          color:$color-fondo-social-def ;
+
         }
       }
     }
@@ -111,20 +135,31 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 40px;
+    height: 80px;
     z-index: 2;
+    background:$color-gradient-footer ;
 
     div {
       height: 40px;
-      margin-right: 138px;
+      margin-right: 600px;
 
       span {
-        font-size: 11px;
-        padding-right: 4px;
+        margin-top: 2%;
+        font-size: 15px;
       }
     }
 
   }
+  .footer-container:hover{
+    background-color: $color-fondo-difuminado;
+    
+    div{
+      span{
+        color: $color-letter-hover;
+        font-size: 13pt;
+              }
+            }
+           }
 
 }
 @media(max-width:576px) {
