@@ -44,6 +44,8 @@
   "TYPE_CLIENT": "Type client",
   "SALES": "Sales",
   "PAYMENT_METHOD": "Payment method",
-  "NEW_TRANSACTION": "New transaction"
+  "NEW_TRANSACTION": "New transaction",
+  "NEW_CLIENT": "New client",
+  "PHONE_NUMBER": "Phone number"
 }
 
