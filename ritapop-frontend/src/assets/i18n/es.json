@@ -22,7 +22,6 @@
   "ERROR_EMPTY_USER_PASS": "Los campos de usuario y contraseña no pueden estar vacíos",
   "ADMIN": "Administrador",
   "MANAGER": "Gestor",
-  "LOGGED_AS": "Registrado como:",
   "CLIENT": "Cliente",
   "NAME": "Nombre",
   "SURNAME": "Apellidos",
