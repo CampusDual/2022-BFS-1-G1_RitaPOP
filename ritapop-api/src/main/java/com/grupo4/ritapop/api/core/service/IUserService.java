@@ -16,7 +16,6 @@ public interface IUserService {
 	public EntityResult userUpdate(Map<?, ?> attrMap, Map<?, ?> keyMap);
 	public EntityResult userDetailsUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap);
 	public EntityResult userDelete(Map<?, ?> keyMap);
-	public EntityResult sessionProfileQuery(Map<?, ?> keyMap, List<?> attrList);
 
 	//--ROLE--
 	public EntityResult roleQuery(Map<String, Object> keyMap, List<String> attrList);
