@@ -28,7 +28,7 @@
   "NIF": "NIF",
   "BIRTH_DATE": "Birth date",
   "ID_TRANSACTIONS": "ID",
-  "ID_TRANSACTION": "ID",
+  "ID_TRANSACTION": "Transaction Number",
   "TRANSACTIONS": "Transactions",
   "TRANSACTION": "Transaction",
   "SELLER_CLI": "Seller client",
