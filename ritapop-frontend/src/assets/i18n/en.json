@@ -53,6 +53,8 @@
   "MIN_VALIDATOR": "Must be greater than zero",
   "MAX_VALIDATOR": "Must be less than 999999,99",
   "PURCHASES": "Purchases",
-  "PHONE_VALIDATOR": "Invalid phone number"
+  "PHONE_VALIDATOR": "Invalid phone number",
+  "NEW_CLIENT": "New client",
+  "PHONE_NUMBER": "Phone number"
 }
 
