@@ -50,6 +50,8 @@
   "ROLENAME": "Rol",
   "EMAIL": "Email",
   "PAYMENT_METHOD": "Método de pago",
-  "NEW_TRANSACTION": "Nueva transacción"
+  "NEW_TRANSACTION": "Nueva transacción",
+  "MIN_VALIDATOR": "Debe ser mayor que cero",
+  "MAX_VALIDATOR": "Debe ser menor que 999999,99"
 }
 

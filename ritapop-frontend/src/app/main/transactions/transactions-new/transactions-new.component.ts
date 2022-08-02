@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-transactions-new',
@@ -7,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionsNewComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  maxValidator(control: FormControl): ValidationErrors  {
+    let result = {};
+    if (control.value && control.value > 999999.99) {
+      result['requiredMax'] = true;
+    }
+    return result;
+  }
+
+  minValidator(control: FormControl): ValidationErrors  {
+    let result = {};
+    if (control.value && control.value < 0) {
+      result['requiredMin'] = true;
+    }
+    return result;
+  }
 
 }
