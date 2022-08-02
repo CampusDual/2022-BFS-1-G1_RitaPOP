@@ -50,6 +50,8 @@
   "ROLENAME": "Rol",
   "EMAIL": "Email",
   "PAYMENT_METHOD": "Método de pago",
-  "NEW_TRANSACTION": "Nueva transacción"
+  "NEW_TRANSACTION": "Nueva transacción",
+  "NEW_CLIENT": "Nuevo cliente",
+  "PHONE_NUMBER": "Número de teléfono"
 }
 

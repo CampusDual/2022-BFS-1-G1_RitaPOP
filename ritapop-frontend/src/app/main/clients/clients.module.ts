@@ -5,10 +5,11 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { ClientsHomeComponent } from './clients-home/clients-home.component';
 import { ClientsVipRenderComponent } from './clients-home/clients-vip-render/clients-vip-render.component';
+import { ClientsNewComponent } from './clients-new/clients-new.component';
 
 
 @NgModule({
-  declarations: [ClientsHomeComponent, ClientsVipRenderComponent],
+  declarations: [ClientsHomeComponent, ClientsVipRenderComponent, ClientsNewComponent],
   imports: [
     CommonModule,
     OntimizeWebModule,
