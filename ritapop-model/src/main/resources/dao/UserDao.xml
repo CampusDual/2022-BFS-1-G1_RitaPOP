@@ -11,7 +11,6 @@
     <UpdateKeys>
         <Column>USER_</Column>
     </UpdateKeys>
-    <GeneratedKey>USER_</GeneratedKey>
     <Queries>
         <Query id="default">
             <ValidColumns>
@@ -20,6 +19,9 @@
                 <Column>PASSWORD</Column>
                 <Column>NAME</Column>
                 <Column>SURNAME</Column>
+                <Column>NIF</Column>
+                <Column>PHOTO</Column>
+                <Column>PHONE</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
@@ -30,7 +32,28 @@
                     #WHERE#
                 ]]>
             </Sentence>
-        </Query>    
+        </Query>
+        <Query id="details">
+            <AmbiguousColumns>
+                <AmbiguousColumn name="USER_TUSER" prefix="T"
+                                 databaseName="USER_" />
+                <AmbiguousColumn name="USER_TUSER_ROLE" prefix="TR"
+                                 databaseName="USER" />
+            </AmbiguousColumns>
+            <Sentence>
+                <![CDATA[
+                    SELECT
+                        #COLUMNS#
+                    FROM
+                        ${mainschema}.TUSER t
+                        INNER JOIN
+                        ${mainschema}.TUSER_ROLE tr
+                        ON
+                        t.USER_ = tr.USER_
+                    #WHERE#
+                ]]>
+            </Sentence>
+        </Query>
         <Query id="login">
             <ValidColumns>
                 <Column>USER_</Column>
