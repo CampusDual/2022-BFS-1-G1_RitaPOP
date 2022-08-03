@@ -41,7 +41,7 @@
   "PRICE": "Precio",
   "PRODUCT_NAME": "Nombre del producto",
   "PRODUCT_CATEGORY": "Categoria de producto",
-  "TYPE_CLIENT": "Tipo de cliente",
+  "TYPE_CLIENT": "Tipo de cliente  (VIP >= 10 VENTAS)",
   "SALES": "Ventas",
   "USERS": "Usuarios",
   "PHONE": "Teléfono",
