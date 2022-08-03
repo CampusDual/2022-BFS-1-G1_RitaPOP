@@ -1,7 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+$color-global-pink : rgb(255, 0, 153);
+$color-global-pink-dif : rgb(251, 209, 235);
+$color-global-azul :rgb(4, 211, 188);
+$color-global-azul-dif :rgb(216, 249, 245);
+$color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
+$color-gradient-vistas  :  linear-gradient(to right,rgb(216, 249, 245),rgb(251, 209, 235));
+
 .input-padding{
   padding-right: 6px;
 }
 o-text-input, o-date-input, o-image{
   padding-right: 6px;
+}
+
+.o-bar-menu nav a:hover {
+  color: $color-global-pink;
 }
