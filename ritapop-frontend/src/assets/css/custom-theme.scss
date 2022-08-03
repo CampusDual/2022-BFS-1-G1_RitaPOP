@@ -1,184 +1,96 @@
 @import "node_modules/@angular/material/theming";
 
-
-
 // Include non-theme styles for core.
-
 @include mat-core();
 
 /* Color definitions */
 $mat-custom-accent: (
-
  50 : #FFE0F3 ,
-
  100 : #FFB3E0 ,
-
  200 : #FF80CC ,
-
  300 : #FF4DB8 ,
-
  400 : #FF26A8 ,
-
  500 : #FF0099 ,
-
  600 : #FF0091 ,
-
  700 : #FF0086 ,
-
  800 : #FF007C ,
-
  900 : #FF006B ,
-
  A100 : #FFFFFF ,
-
  A200: #FFF2F7 ,
-
  A400: #FFBFD6 ,
-
  A700: #FFA6C6 ,
-
-contrast: (
-
-50 : #000000,
-
-100 : #000000,
-
-200 : #000000,
-
-300 : #ffffff,
-
-400 : #ffffff,
-
-500 : #ffffff,
-
-600 : #ffffff,
-
-700 : #ffffff,
-
-800 : #FFFFFF ,
-
-900 : #ffffff,
-
-A100 : #000000,
-
-A200 : #000000,
-
-A400 : #ffffff,
-
-A700 : #ffffff,
-
+ contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A700 : #ffffff,
 )
 );
 
 $mat-custom-primary: (
-
 /* For use in src/lib/core/theming/_palette.scss */
-
-
-
 50 : #E1FAF7,
-
 100 : #B4F2EB,
-
 200 : #82E9DE,
-
 300 : #4FE0D0,
-
 400 : #2ADAC6,
-
 500 : #04D3BC,
-
 600 : #03CEB6,
-
 700 : #03C8AD,
-
 800 : #02C2A5,
-
 900 : #01B797 ,
-
 A100 : #E0FFF9 ,
-
 A200 : #ADFFEE ,
-
 A400 : #7AFFE4,
-
 A700 : #61FFDE ,
-
 contrast: (
-
 50 : #000000,
-
 100 : #000000,
-
 200 : #000000,
-
-300 : #000000,
-
-400 : #000000,
-
-500 : #000000,
-
-600 : #000000,
-
+300 : #ffffff,
+400 : #ffffff,
+500 : #ffffff,
+600 : #ffffff,
 700 : #ffffff,
-
-800 : #ffffff,
-
+800 : #FFFFFF ,
 900 : #ffffff,
-
 A100 : #000000,
-
 A200 : #000000,
-
+A400 : #ffffff,
 A700 : #ffffff,
-
 )
 
 );
 // Define a theme.
-
 $primary: mat-palette($mat-custom-primary);
-
 $accent: mat-palette($mat-custom-accent);
-
 $background-color: #e1e1e1;
-
 /* Light theme */
-
 $theme: mat-light-theme($primary, $accent);
-
 // Insert custom background color
-
 $background: map-get($theme, "background");
-
 $background: map_merge(
-
 $background,
-
 (
-
 "background": $background-color,
-
 )
-
 );
-
 $theme: map_merge(
-
 $theme,
-
 (
-
 "background": $background,
-
 )
-
 );
-
 /* Dark theme */
-
 $primary-dark: mat-palette($mat-custom-primary);
-
 $accent-dark: mat-palette($mat-custom-accent);
-
 $dark-theme: mat-dark-theme($primary-dark, $accent-dark);
