@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
+import { ValidationErrors, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-transactions-new',
