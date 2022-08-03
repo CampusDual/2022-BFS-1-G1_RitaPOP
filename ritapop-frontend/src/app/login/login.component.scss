@@ -1,6 +1,5 @@
 $color-letter-global : rgb(255, 0, 153);
 $color-global-azul :rgb(4, 211, 188, 0.9);
-$color-fondo-social :   red;
 $color-fondo-social-def :   rgb(255, 0, 153);
 $color-fondo-difuminado : rgb(255, 0, 153, 0.6);
 $color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
@@ -65,7 +64,6 @@ $color-letter-hover:  black;
           padding: 16px;
           min-height: 600px;
           min-width: 368px;
-          color: $color-fondo-social;
           
         }
 
