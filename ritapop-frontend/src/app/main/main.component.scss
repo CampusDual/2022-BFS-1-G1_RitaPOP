@@ -1,19 +1,29 @@
 /* You can add main module styles to this file */
-span{
-    background-color: gainsboro;
-    margin-left: 5%;
-    border: solid 1px crimson;
-    padding: 5%;
-}
+$color-global-pink : rgb(255, 0, 153);
+$color-global-pink-dif : rgb(251, 209, 235);
+$color-global-azul :rgb(4, 211, 188);
+$color-global-azul-dif :rgb(216, 249, 245);
+$color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
+$color-gradient-vistas  :  linear-gradient(to right,rgb(216, 249, 245),rgb(251, 209, 235));
+
 span:hover{
-    background-color: cornsilk;
-    border: solid 2px crimson;
+    color: $color-global-pink;
     cursor: default;
 }
-o-bar-menu-item, ng-star-inserted{
-    background-color: red;
+.logo-rita{
+    width: 60px;
+    height: 60px;
+    margin-top: 1px;
+    position: absolute;
+    margin-left: 250px;
+}
+.user-profile{
+    margin-top: 16px;
+    position: absolute;
+    margin-left: 30px;
+}
+.options{
+    margin-left: 770px;
 }
 
-.o-bar-menu-item{
-    background-color: red;
-}
+

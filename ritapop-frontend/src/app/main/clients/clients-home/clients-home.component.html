@@ -1,8 +1,8 @@
-<o-form show-header="no">
-<div fxFill fxLayout="column" fxLayoutAlign="start">
+<o-form-layout-manager title="{{'CLIENTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ID" >
+  <div fxFill fxLayout="column" fxLayoutAlign="start" class="table-div">
   <o-table #clientsTable attr="clientsTable" service="clients" entity="client" keys="ID"
     columns="ID;NAME;SURNAME;NIF;BIRTH_DATE;SALES"
-    visible-columns="ID;NAME;SURNAME;NIF;BIRTH_DATE;SALES;TYPE_CLIENT" query-rows="20" refresh-button="no" delete-button="no" insert-button="no" >
+    visible-columns="ID;NAME;SURNAME;NIF;BIRTH_DATE;SALES;TYPE_CLIENT" query-rows="15" refresh-button="no" delete-button="no" insert-button="no" >
     <o-table-column attr="BIRTH_DATE" title="BIRTH_DATE" type="date" format="LL"></o-table-column>
     <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
     <o-table-column attr="TYPE_CLIENT" title="TYPE_CLIENT" class="o-table-column-centered">
@@ -10,4 +10,4 @@
     </o-table-column>
   </o-table>
 </div>
-</o-form>
+</o-form-layout-manager>

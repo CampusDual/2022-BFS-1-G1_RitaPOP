@@ -1,8 +1,8 @@
-<o-form-layout-manager title="{{'TRANSACTIONS' | oTranslate }}" separator=" " mode="tab" label-columns="ID_TRANSACTION" >
+<o-form-layout-manager title="{{'TRANSACTIONS' | oTranslate }}" separator=" " mode="dialog" label-columns="ID_TRANSACTION" >
     <div fxFill fxLayout="column" fxLayoutAlign="start">
       <o-table attr="transactionsTable" service="transactions" entity="transactionDetails" keys="ID_TRANSACTION" header-actions="R;I;U;D" show-header-navigation="no"
         columns="ID_TRANSACTION;NIF_SELLER;NIF_BUYER;START_DATE;END_DATE;PAYMENT_METHOD;PRICE;PRODUCT_NAME;PRODUCT_CATEGORY"
-        visible-columns="ID_TRANSACTION;NIF_SELLER;NIF_BUYER;START_DATE;END_DATE;PAYMENT_METHOD;PRICE;PRODUCT_NAME;PRODUCT_CATEGORY" query-rows="20" refresh-button="no" delete-button="no">
+        visible-columns="ID_TRANSACTION;NIF_SELLER;NIF_BUYER;START_DATE;END_DATE;PAYMENT_METHOD;PRICE;PRODUCT_NAME;PRODUCT_CATEGORY" query-rows="15" refresh-button="no" delete-button="no">
         <o-table-column attr="PRICE" title="PRICE" type="currency" currency-symbol="€" currency-symbol-position="right"
         thousand-separator="." decimal-separator="," class="o-table-column-centered"></o-table-column>
         <o-table-column attr="START_DATE" title="START_DATE" type="date" format="LL"></o-table-column>
