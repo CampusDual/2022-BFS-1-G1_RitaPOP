@@ -14,7 +14,10 @@
     </o-row>
     <o-row>
       <o-text-input attr="PAYMENT_METHOD" class="input-padding" step="0" grouping="no" fxFlex="40" required="yes"></o-text-input>
-      <o-text-input attr="PRICE" class="input-padding" step="0" grouping="no" fxFlex="15" required="yes"></o-text-input>
+      <o-currency-input thousand-separator="." attr="PRICE" class="input-padding" step="0" grouping="no" fxFlex="15" required="yes">
+        <o-validator error-name="requiredMin" error-text="{{ 'MIN_VALIDATOR' | oTranslate }}" [validator-function]="minValidator"></o-validator>
+        <o-validator error-name="requiredMax" error-text="{{ 'MAX_VALIDATOR' | oTranslate }}" [validator-function]="maxValidator"></o-validator>
+      </o-currency-input>
     </o-row>
   </o-column>
 </o-form>

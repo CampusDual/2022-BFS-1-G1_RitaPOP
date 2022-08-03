@@ -1,4 +1,4 @@
-<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTION" header-actions="R;U;D" keys-sql-types="INTEGER" show-header-navigation="yes">
+<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTION" header-actions="U;D" keys-sql-types="INTEGER" show-header-navigation="yes">
   <o-integer-input attr="ID_TRANSACTION" sql-type="INTEGER" enabled="no"></o-integer-input>
  <o-row>
    <o-column title="{{ 'TRANSACTION' | oTranslate }}" fxFlex="70" >
@@ -12,7 +12,10 @@
      </o-row>
      <o-row>
       <o-text-input attr="PAYMENT_METHOD" fxFlex="50" required="yes"></o-text-input>
-      <o-currency-input attr="PRICE" fxFlex="50" required="yes"></o-currency-input>
+      <o-currency-input thousand-separator="." attr="PRICE" class="input-padding" step="0" grouping="no" fxFlex="15" required="yes" enabled="no">
+        <o-validator error-name="requiredMin" error-text="{{ 'MIN_VALIDATOR' | oTranslate }}" [validator-function]="minValidator"></o-validator>
+        <o-validator error-name="requiredMax" error-text="{{ 'MAX_VALIDATOR' | oTranslate }}" [validator-function]="maxValidator"></o-validator>
+      </o-currency-input>
      </o-row>
      <o-row>
       <o-text-input attr="PRODUCT_NAME" fxFlex="50" required="yes"></o-text-input>
