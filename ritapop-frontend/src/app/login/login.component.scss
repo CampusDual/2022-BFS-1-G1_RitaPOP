@@ -1,5 +1,5 @@
 $color-letter-global : rgb(255, 0, 153);
-$color-global-azul :rgb(4, 211, 188, 0.9);
+$color-global-azul :rgb(4, 211, 188);
 $color-fondo-social-def :   rgb(255, 0, 153);
 $color-fondo-difuminado : rgb(255, 0, 153, 0.6);
 $color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
@@ -64,7 +64,6 @@ $color-letter-hover:  black;
           padding: 16px;
           min-height: 600px;
           min-width: 368px;
-          
         }
 
         .logo-container {
@@ -92,7 +91,6 @@ $color-letter-hover:  black;
           font-size: 16px;
           color: $color-fondo-social-def;
           background-color: $color-global-azul;
-          //background-color: white;
           border-radius: 12px;
           box-shadow: 5px 5px 5px $color-fondo-social-def;
         }
