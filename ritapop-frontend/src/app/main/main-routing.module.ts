@@ -14,7 +14,7 @@ export const routes: Routes = [
       { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
       { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
       { path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule)},
-      { path: 'sales', loadChildren: () => import('./sales/sales.module').then(m => m.SalessModule)},
+      { path: 'sales', loadChildren: () => import('./sales/sales.module').then(m => m.SalesModule)},
       { path: 'transactions', loadChildren: () => import('./transactions/transactions.module').then(m => m.TransactionsModule)}
     ]
   }
