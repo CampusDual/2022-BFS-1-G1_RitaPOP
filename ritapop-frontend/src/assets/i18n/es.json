@@ -57,6 +57,9 @@
   "NAME_PRODUCTS": "Producto",
   "NAME_CATEGORY": "Categoría",
   "SURNAME_SELLER": "Apellidos vendedor",
-  "SURNAME_BUYER": "Apellidos comprador"
+  "SURNAME_BUYER": "Apellidos comprador",
+  "QUANTITY":"Cantidad",
+  "NAME_SELLER":"Nombre vendedor",
+  "NAME_BUYER":"Nombre comprador"
 }
 

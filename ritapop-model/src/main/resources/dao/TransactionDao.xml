@@ -58,6 +58,14 @@
 					databaseName="NIF" />
 				<AmbiguousColumn name="NIF_BUYER" prefix="C2"
 					databaseName="NIF" />
+				<AmbiguousColumn name="PHONE_SELLER" prefix="C1"
+								 databaseName="phone_number" />
+				<AmbiguousColumn name="PHONE_BUYER" prefix="C2"
+								 databaseName="phone_number" />
+				<AmbiguousColumn name="EMAIL_SELLER" prefix="C1"
+								 databaseName="email" />
+				<AmbiguousColumn name="EMAIL_BUYER" prefix="C2"
+								 databaseName="email" />
 			</AmbiguousColumns>
 			<Sentence>
    <![CDATA[

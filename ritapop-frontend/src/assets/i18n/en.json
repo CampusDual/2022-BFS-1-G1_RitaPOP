@@ -57,6 +57,9 @@
   "NAME_PRODUCTS": "Product",
   "NAME_CATEGORY": "Category",
   "SURNAME_SELLER": "Surname seller",
-  "SURNAME_BUYER": "Surname buyer"
+  "SURNAME_BUYER": "Surname buyer",
+  "QUANTITY":"Quantity",
+  "NAME_SELLER":"Name seller",
+  "NAME_BUYER":"Name buyer"
 }
 

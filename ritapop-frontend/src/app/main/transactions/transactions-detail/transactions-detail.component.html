@@ -1,4 +1,4 @@
-<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTIONS" header-actions="R;U;D" keys-sql-types="INTEGER" show-header-navigation="yes">
+<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTIONS" header-actions="" keys-sql-types="INTEGER" show-header-navigation="no" refresh-button="no" delete-button="no" insert-button="no" undo-button="no" save-button="no">
   <o-integer-input attr="ID_TRANSACTIONS" sql-type="INTEGER" enabled="no"></o-integer-input>
  <o-row>
    <o-column title="{{ 'TRANSACTION' | oTranslate }}" fxFlex="70" >
@@ -7,24 +7,32 @@
        <o-nif-input class="input-padding" attr="NIF_BUYER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
      </o-row>
      <o-row>
-      <o-nif-input class="input-padding" attr="NAME_SELLER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
-       <o-nif-input class="input-padding" attr="NAME_BUYER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
+      <o-text-input class="input-padding" attr="NAME_SELLER" fxFlex="50" required="yes" enabled="no"></o-text-input>
+       <o-text-input class="input-padding" attr="NAME_BUYER" fxFlex="50" required="yes" enabled="no"></o-text-input>
      </o-row>
      <o-row>
-      <o-nif-input class="input-padding" attr="SURNAME_SELLER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
-       <o-nif-input class="input-padding" attr="SURNAME_BUYER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
+      <o-text-input class="input-padding" attr="SURNAME_SELLER" fxFlex="50" required="yes" enabled="no"></o-text-input>
+       <o-text-input class="input-padding" attr="SURNAME_BUYER" fxFlex="50" required="yes" enabled="no"></o-text-input>
      </o-row>
      <o-row>
-       <o-date-input class="input-padding" attr="PUBLICATION_DATETIME" fxFlex="50"></o-date-input>
-      <o-date-input class="input-padding" attr="START_DATE" fxFlex="50" required="yes"></o-date-input>
+      <o-integer-input class="input-padding" attr="PHONE_SELLER" thousand-separator=" " fxFlex="50" required="yes" enabled="no"></o-integer-input>
+      <o-integer-input class="input-padding" attr="PHONE_BUYER" thousand-separator=" " fxFlex="50" required="yes" enabled="no"></o-integer-input>
      </o-row>
      <o-row>
-      <o-text-input class="input-padding" attr="NAME_PAYMENT_METHOD" fxFlex="50" required="yes"></o-text-input>
-      <o-currency-input attr="PRICE" fxFlex="50" required="yes" enabled="no"></o-currency-input>
+      <o-text-input class="input-padding" attr="EMAIL_SELLER" fxFlex="50" required="yes" enabled="no"></o-text-input>
+       <o-text-input class="input-padding" attr="EMAIL_BUYER" fxFlex="50" required="yes" enabled="no"></o-text-input>
+    </o-row>
+     <o-row>
+       <o-date-input class="input-padding" attr="PUBLICATION_DATETIME" fxFlex="50" enabled="no"></o-date-input>
+      <o-date-input class="input-padding" attr="START_DATE" fxFlex="50" required="yes" enabled="no"></o-date-input>
      </o-row>
      <o-row>
-      <o-text-input class="input-padding" attr="NAME_PRODUCTS" fxFlex="50" required="yes"></o-text-input>
-      <o-text-input class="input-padding" attr="NAME_PRODUCTS_CATEGORY" fxFlex="50"></o-text-input>
+      <o-text-input class="input-padding" attr="NAME_PAYMENT_METHOD" fxFlex="50" required="yes" enabled="no"></o-text-input>
+      <o-currency-input class="input-padding" attr="QUANTITY" fxFlex="50" required="yes" enabled="no"></o-currency-input>
+     </o-row>
+     <o-row>
+      <o-text-input class="input-padding" attr="NAME_PRODUCTS" fxFlex="50" required="yes" enabled="no"></o-text-input>
+      <o-text-input class="input-padding" attr="NAME_PRODUCTS_CATEGORY" fxFlex="50" enabled="no"></o-text-input>
     </o-row>
    </o-column>
  </o-row>
