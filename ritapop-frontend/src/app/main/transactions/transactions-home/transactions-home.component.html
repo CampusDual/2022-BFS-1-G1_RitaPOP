@@ -2,7 +2,7 @@
     <div fxFill fxLayout="column" fxLayoutAlign="start">
       <o-table attr="transactionsTable" service="transactions" entity="transactionDetails" keys="ID_TRANSACTION" header-actions="R;I;U;D" show-header-navigation="no"
         columns="ID_TRANSACTIONS;NIF_SELLER;NIF_BUYER;PUBLICATION_DATETIME;START_DATE;NAME_PRODUCTS;NAME_CATEGORY;QUANTITY"
-        visible-columns="ID_TRANSACTION;NIF_SELLER;NIF_BUYER;PUBLICATION_DATETIME;START_DATE;NAME_PRODUCTS;NAME_CATEGORY;QUANTITY" query-rows="20" refresh-button="no" delete-button="no">
+        visible-columns="ID_TRANSACTION;NIF_SELLER;NIF_BUYER;PUBLICATION_DATETIME;START_DATE;NAME_PRODUCTS;NAME_CATEGORY;QUANTITY" query-rows="20" refresh-button="no" delete-button="no" insert-button="no">
         <o-table-column attr="QUANTITY" title="QUANTITY" type="currency" currency-symbol="€" currency-symbol-position="right"
         thousand-separator="." decimal-separator="," class="o-table-column-centered"></o-table-column>
         <o-table-column attr="START_DATE" title="START_DATE" type="date" format="LLL"></o-table-column>
