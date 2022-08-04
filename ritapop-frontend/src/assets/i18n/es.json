@@ -61,9 +61,9 @@
   "QUANTITY":"Cantidad",
   "NAME_SELLER":"Nombre vendedor",
   "NAME_BUYER":"Nombre comprador",
-  "NATURAL_ID": "Sale no.",
-  "NAME_PRODUCTS_CATEGORY": "Product category",
-  "NAME_PAYMENT_METHOD": "Payment method",
-  "NAME_SALES_STATUS": "Status"
+  "NATURAL_ID": "Nº de venta",
+  "NAME_PRODUCTS_CATEGORY": "Categoría",
+  "NAME_PAYMENT_METHOD": "Métdo de pago",
+  "NAME_SALES_STATUS": "Estado"
 }
 
