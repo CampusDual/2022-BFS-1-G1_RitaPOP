@@ -123,17 +123,6 @@ public class UserService implements IUserService {
 		return this.daoHelper.update(this.userDao, attrMap, keyMap);
 	}
 
-	public EntityResult sessionProfileQuery(Map<?, ?> keyMap, List<?> attrList){
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		UserInformation p = (UserInformation) authentication.getPrincipal();
-		Collection<GrantedAuthority> aut = p.getAuthorities();
-		Optional<GrantedAuthority> roles = aut.stream().findFirst();
-		String rol = roles.get().getAuthority();
-		HashMap<String,Object> hashMap = new HashMap<>();
-		hashMap.put("rol",rol);
-		return new EntityResultMapImpl(hashMap);
-	}
-
 	@Override
 	public EntityResult roleQuery(Map<String, Object> keyMap, List<String> attrList) {
 		return this.daoHelper.query(roleDao, keyMap, attrList);
