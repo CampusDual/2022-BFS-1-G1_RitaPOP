@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, ValidationErrors } from '@angular/forms';
 
 @Component({
-  selector: 'app-users-new',
-  templateUrl: './users-new.component.html',
-  styleUrls: ['./users-new.component.css']
+  selector: 'app-clients-new',
+  templateUrl: './clients-new.component.html',
+  styleUrls: ['./clients-new.component.css']
 })
-export class UsersNewComponent implements OnInit {
+export class ClientsNewComponent implements OnInit {
 
   constructor() { }
 
