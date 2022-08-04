@@ -77,29 +77,29 @@ public class SaleService implements ISaleService {
 
 
     @Override
-    public EntityResult transactionDetailsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+    public EntityResult saleDetailsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
 
-        int id_seller = getIdFromNIF(attrMap.get("NIF_SELLER"));
+        /*int id_seller = getIdFromNIF(attrMap.get("NIF_SELLER"));
         attrMap.put("SELLER_CLI",id_seller);
         int id_buyer = getIdFromNIF(attrMap.get("NIF_BUYER"));
-        attrMap.put("BUYER_CLI",id_buyer);
-        return this.daoHelper.insert(this.transactionDao, attrMap);
+        attrMap.put("BUYER_CLI",id_buyer);*/
+        return this.daoHelper.insert(this.saleDao, attrMap);
     }
 
 
     @Override
-    public EntityResult transactionDetailsDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        keyMap.put("id", keyMap.get("ID_TRANSACTION"));
-        keyMap.remove("ID_TRANSACTION");
-        return this.daoHelper.delete(this.transactionDao, keyMap);
+    public EntityResult saleDetailsDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        /*keyMap.put("id", keyMap.get("ID_TRANSACTION"));
+        keyMap.remove("ID_TRANSACTION");*/
+        return this.daoHelper.delete(this.saleDao, keyMap);
     }
 
 
     @Override
-    public EntityResult transactionDetailsUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+    public EntityResult saleDetailsUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
             throws OntimizeJEERuntimeException {
         keyMap.put("id", keyMap.get("ID_TRANSACTION"));
         keyMap.remove("ID_TRANSACTION");
-        return this.daoHelper.update(this.transactionDao,attrMap, keyMap);
+        return this.daoHelper.update(this.saleDao,attrMap, keyMap);
     }
 }
