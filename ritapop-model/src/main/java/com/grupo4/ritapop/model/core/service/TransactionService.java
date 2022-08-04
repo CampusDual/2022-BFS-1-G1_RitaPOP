@@ -73,7 +73,8 @@ public class TransactionService implements ITransactionService {
 	@Override
 	 public EntityResult transactionDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 	   throws OntimizeJEERuntimeException {
-	  return this.daoHelper.query(this.transactionDao, keyMap, attrList, TransactionDao.QUERY_OFFER_DETAILS);
+		keyMap.put(TransactionDao.ATTR_SALE_STATUS,3); // Cambiar al valor entero 3
+	  return this.daoHelper.query(this.transactionDao, keyMap, attrList, TransactionDao.QUERY_TRANSACTION_DETAILS);
 	 }
 	
 

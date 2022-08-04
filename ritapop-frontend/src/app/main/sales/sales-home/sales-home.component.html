@@ -1,0 +1,13 @@
+<o-form-layout-manager title="{{'SALES' | oTranslate }}" separator=" " mode="dialog" label-columns="ID_SALES" >
+  <div fxFill fxLayout="column" fxLayoutAlign="start">
+    <o-table attr="salesTable" service="sales" entity="saleDetails" keys="ID_SALES" header-actions="R;I;U;D" show-header-navigation="yes"
+    columns="NATURAL_ID;NIF;EMAIL;PUBLICATION_DATETIME;PHOTO;NAME_PRODUCTS;NAME_PRODUCTS_CATEGORY;PRICE;NAME_SALES_STATUS"
+    visible-columns="NATURAL_ID;NIF;EMAIL;PUBLICATION_DATETIME;PHOTO;NAME_PRODUCTS;NAME_PRODUCTS_CATEGORY;PRICE;NAME_SALES_STATUS" query-rows="20">
+    <o-table-column attr="PRICE" title="PRICE" type="currency" currency-symbol="€" currency-symbol-position="right"
+    thousand-separator="." decimal-separator="," class="o-table-column-centered"></o-table-column>
+    <o-table-column attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="no" empty-image="assets/images/no-image.png"
+        image-type="base64" width="150px"></o-table-column>
+    <o-table-column attr="PUBLICATION_DATETIME" title="PUBLICATION_DATETIME" type="date" width="200px" format="LLL"></o-table-column>
+  </o-table>
+</div>
+</o-form-layout-manager>

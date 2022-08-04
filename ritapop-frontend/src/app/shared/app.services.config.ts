@@ -10,5 +10,8 @@ export const SERVICE_CONFIG: Object = {
   },
   'transactions': {
     'path': '/transactions'
+  },
+  'sales': {
+    'path': '/sales'
   }
 };

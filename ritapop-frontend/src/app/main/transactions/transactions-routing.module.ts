@@ -13,7 +13,7 @@ const routes: Routes = [{
   path:"new",
   component: TransactionsNewComponent},
 {
-  path:":ID_TRANSACTION",
+  path:":ID_TRANSACTIONS",
   component: TransactionsDetailComponent}
 
 ];

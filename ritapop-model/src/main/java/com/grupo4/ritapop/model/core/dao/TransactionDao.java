@@ -10,6 +10,7 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/TransactionDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class TransactionDao extends OntimizeJdbcDaoSupport {
 
+ /*
  public static final String ATTR_ID = "ID";
  public static final String ATTR_SELLER_CLI = "SELLER_CLI";
  public static final String ATTR_BUYER_CLI = "BUYER_CLI";
@@ -22,4 +23,15 @@ public class TransactionDao extends OntimizeJdbcDaoSupport {
  public static final String ATTR_NIF_SELLER = "NIF_SELLER";
  public static final String ATTR_NIF_BUYER = "NIF_BUYER";
  public static final String ATTR_PAYMENT_METHOD = "PAYMENT_METHOD";
+ */
+
+ // NEW TRANSACTIONS TABLE
+ public static final String ATTR_ID = "id";
+ public static final String ATTR_SELLER_CLI = "seller_cli";
+ public static final String ATTR_BUYER_CLI = "buyer_cli";
+ public static final String ATTR_START_DATE = "start_date";
+ public static final String ATTR_PAYMENT_METHOD = "id_payment_method";
+ // NEW TRANSACTIONDETAILS QUERY
+ public static final String QUERY_TRANSACTION_DETAILS = "details";
+ public static final String ATTR_SALE_STATUS = "sale_status";
 }
