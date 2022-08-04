@@ -3,6 +3,17 @@
 // Include non-theme styles for core.
 @include mat-core();
 
+
+$color-global-pink : rgb(255, 0, 153);
+$color-global-pink-dif : rgb(251, 209, 235);
+$color-global-blue :rgb(4, 211, 188);
+$color-global-orage :rgba(255, 190, 92, 0.473);
+$color-global-purple :rgb(218, 70, 255);
+$color-global-blue-dif :rgb(216, 249, 245);
+$color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
+$color-gradient-views  :  linear-gradient(to right,rgb(216, 249, 245),rgb(251, 209, 235));
+
+
 /* Color definitions */
 $mat-custom-accent: (
  50 : #FFE0F3 ,
@@ -94,3 +105,29 @@ $theme,
 $primary-dark: mat-palette($mat-custom-primary);
 $accent-dark: mat-palette($mat-custom-accent);
 $dark-theme: mat-dark-theme($primary-dark, $accent-dark);
+
+.input-padding{
+    padding-right: 6px;
+  }
+  o-text-input, o-date-input, o-image{
+    padding-right: 6px;
+  }
+  
+  .o-bar-menu nav a:hover {
+    color: $color-global-pink;
+  }
+
+.mat-table {
+    .mat-header-row {
+        .mat-header-cell {
+            background-color: $color-global-orage;
+        }
+    }
+}
+
+
+
+.o-table-container{
+    background: $color-gradient-views;
+}
+
