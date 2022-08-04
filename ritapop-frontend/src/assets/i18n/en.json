@@ -58,8 +58,12 @@
   "NAME_CATEGORY": "Category",
   "SURNAME_SELLER": "Surname seller",
   "SURNAME_BUYER": "Surname buyer",
-  "QUANTITY":"Quantity",
-  "NAME_SELLER":"Name seller",
-  "NAME_BUYER":"Name buyer"
+  "QUANTITY": "Quantity",
+  "NAME_SELLER": "Name seller",
+  "NAME_BUYER": "Name buyer",
+  "NATURAL_ID": "Sale no.",
+  "NAME_PRODUCTS_CATEGORY": "Product category",
+  "NAME_PAYMENT_METHOD": "Payment method",
+  "NAME_SALES_STATUS": "Status"
 }
 

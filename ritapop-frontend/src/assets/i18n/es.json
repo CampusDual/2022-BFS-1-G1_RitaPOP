@@ -60,6 +60,10 @@
   "SURNAME_BUYER": "Apellidos comprador",
   "QUANTITY":"Cantidad",
   "NAME_SELLER":"Nombre vendedor",
-  "NAME_BUYER":"Nombre comprador"
+  "NAME_BUYER":"Nombre comprador",
+  "NATURAL_ID": "Sale no.",
+  "NAME_PRODUCTS_CATEGORY": "Product category",
+  "NAME_PAYMENT_METHOD": "Payment method",
+  "NAME_SALES_STATUS": "Status"
 }
 
