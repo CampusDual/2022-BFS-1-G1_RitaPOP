@@ -1,5 +1,5 @@
-<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTION" header-actions="R;U;D" keys-sql-types="INTEGER" show-header-navigation="yes">
-  <o-integer-input attr="ID_TRANSACTION" sql-type="INTEGER" enabled="no"></o-integer-input>
+<o-form service="transactions" entity="transactionDetails"  keys="ID_TRANSACTIONS" header-actions="R;U;D" keys-sql-types="INTEGER" show-header-navigation="yes">
+  <o-integer-input attr="ID_TRANSACTIONS" sql-type="INTEGER" enabled="no"></o-integer-input>
  <o-row>
    <o-column title="{{ 'TRANSACTION' | oTranslate }}" fxFlex="70" >
      <o-row>
@@ -7,16 +7,24 @@
        <o-nif-input class="input-padding" attr="NIF_BUYER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
      </o-row>
      <o-row>
-      <o-date-input attr="START_DATE" fxFlex="50" required="yes"></o-date-input>
-      <o-date-input attr="END_DATE" fxFlex="50"></o-date-input>
+      <o-nif-input class="input-padding" attr="NAME_SELLER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
+       <o-nif-input class="input-padding" attr="NAME_BUYER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
      </o-row>
      <o-row>
-      <o-text-input attr="PAYMENT_METHOD" fxFlex="50" required="yes"></o-text-input>
-      <o-currency-input attr="PRICE" fxFlex="50" required="yes"></o-currency-input>
+      <o-nif-input class="input-padding" attr="SURNAME_SELLER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
+       <o-nif-input class="input-padding" attr="SURNAME_BUYER" fxFlex="50" required="yes" enabled="no"></o-nif-input>
      </o-row>
      <o-row>
-      <o-text-input attr="PRODUCT_NAME" fxFlex="50" required="yes"></o-text-input>
-      <o-text-input attr="PRODUCT_CATEGORY" fxFlex="50"></o-text-input>
+       <o-date-input class="input-padding" attr="PUBLICATION_DATETIME" fxFlex="50"></o-date-input>
+      <o-date-input class="input-padding" attr="START_DATE" fxFlex="50" required="yes"></o-date-input>
+     </o-row>
+     <o-row>
+      <o-text-input class="input-padding" attr="NAME_PAYMENT_METHOD" fxFlex="50" required="yes"></o-text-input>
+      <o-currency-input attr="PRICE" fxFlex="50" required="yes" enabled="no"></o-currency-input>
+     </o-row>
+     <o-row>
+      <o-text-input class="input-padding" attr="NAME_PRODUCTS" fxFlex="50" required="yes"></o-text-input>
+      <o-text-input class="input-padding" attr="NAME_PRODUCTS_CATEGORY" fxFlex="50"></o-text-input>
     </o-row>
    </o-column>
  </o-row>

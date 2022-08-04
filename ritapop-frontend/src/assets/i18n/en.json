@@ -52,6 +52,11 @@
   "PAYMENT_METHOD": "Payment method",
   "NEW_TRANSACTION": "New transaction",
   "NEW_CLIENT": "New client",
-  "PHONE_NUMBER": "Phone number"
+  "PHONE_NUMBER": "Phone number",
+  "PUBLICATION_DATETIME": "Publication date",
+  "NAME_PRODUCTS": "Product",
+  "NAME_CATEGORY": "Category",
+  "SURNAME_SELLER": "Surname seller",
+  "SURNAME_BUYER": "Surname buyer"
 }
 

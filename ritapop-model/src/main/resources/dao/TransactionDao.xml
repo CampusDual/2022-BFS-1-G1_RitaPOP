@@ -16,12 +16,44 @@
 	<Queries>
 		<Query id="details">
 			<AmbiguousColumns>
-				<AmbiguousColumn name="ID_TRANSACTION" prefix="T"
+				<AmbiguousColumn name="ID_TRANSACTIONS" prefix="T"
+					databaseName="id" />
+				<AmbiguousColumn name="ID_SALES" prefix="S"
 					databaseName="id" />
 				<AmbiguousColumn name="ID_SELLER" prefix="C1"
 					databaseName="id" />
 				<AmbiguousColumn name="ID_BUYER" prefix="C2"
-					databaseName="id" />
+								 databaseName="id" />
+				<AmbiguousColumn name="ID_PAYMENT_METHOD" prefix="PM"
+								 databaseName="id" />
+				<AmbiguousColumn name="ID_SALES_STATUS" prefix="SS"
+								 databaseName="id" />
+				<AmbiguousColumn name="ID_PRODUCTS" prefix="P"
+								 databaseName="id" />
+				<AmbiguousColumn name="ID_PRODUCTS_CATEGORY" prefix="PC"
+								 databaseName="id" />
+				<AmbiguousColumn name="NAME_SELLER" prefix="C1"
+								 databaseName="name" />
+				<AmbiguousColumn name="NAME_BUYER" prefix="C2"
+								 databaseName="name" />
+				<AmbiguousColumn name="NAME_SALES_STATUS" prefix="SS"
+								 databaseName="name" />
+				<AmbiguousColumn name="NAME_PRODUCTS" prefix="P"
+								 databaseName="name" />
+				<AmbiguousColumn name="NAME_PRODUCTS_CATEGORY" prefix="PC"
+								 databaseName="name" />
+				<AmbiguousColumn name="NAME_PAYMENT_METHOD" prefix="PM"
+								 databaseName="name" />
+				<AmbiguousColumn name="SURNAME_SELLER" prefix="C1"
+								 databaseName="surname" />
+				<AmbiguousColumn name="SURNAME_BUYER" prefix="C2"
+								 databaseName="surname" />
+				<AmbiguousColumn name="NAME_CATEGORY" prefix="PC"
+								 databaseName="name" />
+				<AmbiguousColumn name="DESCRIPTION_PAYMENT_METHOD" prefix="PM"
+								 databaseName="description" />
+				<AmbiguousColumn name="DESCRIPTION_PRODUCTS" prefix="P"
+								 databaseName="description" />
 				<AmbiguousColumn name="NIF_SELLER" prefix="C1"
 					databaseName="NIF" />
 				<AmbiguousColumn name="NIF_BUYER" prefix="C2"
@@ -29,12 +61,22 @@
 			</AmbiguousColumns>
 			<Sentence>
    <![CDATA[
-     SELECT #COLUMNS# FROM PUBLIC.TRANSACTIONS T
-		INNER JOIN PUBLIC.CLIENT C1 ON
-		T.SELLER_CLI = C1.id
-		INNER JOIN PUBLIC.CLIENT C2 ON
-		T.BUYER_CLI = C2.id
-     #WHERE#
+     SELECT #COLUMNS# FROM TRANSACTIONS T
+		INNER JOIN CLIENT C1
+		ON T.SELLER_CLI =C1.ID
+		INNER JOIN CLIENT C2
+		ON T.BUYER_CLI =C2.ID
+		INNER JOIN PAYMENT_METHOD PM
+		ON T.ID_PAYMENT_METHOD =PM.ID
+		INNER JOIN SALES S
+		ON S.ID_TRANSACTION =T.ID
+		INNER JOIN SALES_STATUS SS
+		ON S.SALE_STATUS =SS.ID
+		INNER JOIN PRODUCTS P
+		ON S.ID_PRODUCT =P.ID
+		INNER JOIN PRODUCTS_CATEGORY PC
+		ON P.ID_CATEGORY =PC.ID
+	#WHERE#
    ]]>
    </Sentence>
 		</Query>
