@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-main',
