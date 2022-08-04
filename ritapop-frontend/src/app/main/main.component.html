@@ -1,8 +1,12 @@
-<o-app-layout show-language-selector="yes">
-  <router-outlet></router-outlet>
-  <o-app-layout-header position="end">
-    <o-form attr="roleform" editable-detail="no" show-header="no"></o-form>
-  </o-app-layout-header>
-  <o-user-info-configuration show-profile="no" show-settings="no">
-  </o-user-info-configuration>
-</o-app-layout>
+
+<o-bar-menu title="APP_TITLE" show-language-selector="yes">
+  <o-bar-menu-group icon="settings" class="options" title="{{'OPTIONS' | oTranslate }}" position="end">
+    <o-bar-menu-group title="LANGUAGE">
+      <o-locale-bar-menu-item locale="en" title="English"></o-locale-bar-menu-item>
+      <o-locale-bar-menu-item locale="es" title="Español"></o-locale-bar-menu-item>
+    </o-bar-menu-group>
+  </o-bar-menu-group>
+  <o-user-info class="user-profile" show-profile="no" show-settings="no"></o-user-info>
+  <img class="logo-rita" src="../../../assets/icons/icoRP.png" alt="RitaPOP" >
+</o-bar-menu>
+<router-outlet></router-outlet>

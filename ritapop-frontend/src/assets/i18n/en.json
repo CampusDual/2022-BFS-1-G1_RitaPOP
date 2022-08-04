@@ -40,7 +40,7 @@
   "PRICE": "Price",
   "PRODUCT_NAME": "Product name",
   "PRODUCT_CATEGORY": "Product category",
-  "TYPE_CLIENT": "Type client",
+  "TYPE_CLIENT": "Type client  (VIP = More than 10 sales)",
   "SALES": "Sales",
   "USERS": "Users",
   "PHONE": "Phone",

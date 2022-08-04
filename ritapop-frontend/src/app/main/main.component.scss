@@ -1,12 +1,17 @@
-/* You can add main module styles to this file */
-span{
-    background-color: gainsboro;
+.logo-rita{
+    width: 8%;
+    height: 100%;
+    margin-top: 0.1%;
+    position: absolute;
+    margin-left: 30%;
+}
+.user-profile{
+    margin-top: 2%;
+    position: absolute;
     margin-left: 5%;
-    border: solid 1px crimson;
-    padding: 5%;
 }
-span:hover{
-    background-color: cornsilk;
-    border: solid 2px crimson;
-    cursor: default;
+.options{
+    margin-left: 80%;
 }
+
+
