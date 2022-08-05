@@ -5,34 +5,28 @@
     </o-column>
     <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
       <o-row>
-        <o-combo #combo attr="ID_SELLER" label="DNI_SELLER" service="clients" entity="client" keys="ID" columns="ID;NIF;NAME;SURNAME" visible-columns="NIF" value-column="ID" (onChange)="addNameAndSurnameSeller($event,combo,name,surname)"></o-combo>
+        <o-combo #combo attr="ID_SELLER" label="DNI_SELLER" service="clients" entity="client" keys="ID" columns="ID;NIF;NAME;SURNAME;EMAIL;PHONE_NUMBER" visible-columns="NIF" value-column="ID" (onChange)="addDataSeller($event,combo,name,surname,email,phone_number)"></o-combo>
       </o-row>
       <o-row>
-        <o-text-input #name class="input-padding" attr="NAME" fxFlex="40" required="yes"></o-text-input>
-        <o-text-input #surname class="input-padding" attr="SURNAME" fxFlex="40" required="yes"></o-text-input>
-        <o-date-input attr="STARTDATE" fxFlex="20"></o-date-input>
+        <o-text-input #name class="input-padding" attr="NAME" fxFlex="40" required="yes" read-only="yes"></o-text-input>
+        <o-text-input #surname class="input-padding" attr="SURNAME" fxFlex="40" required="yes" read-only="yes"></o-text-input>
       </o-row>
       <o-row>
-        <o-nif-input attr="ID" class="input-padding" fxFlex="40" required="yes"></o-nif-input>
-        <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input>
-        <o-combo attr="CUSTOMERTYPEID" class="input-padding" fxFlex="20" service="customers"
-           entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION"
-           visible-columns="DESCRIPTION" value-column="CUSTOMERTYPEID"></o-combo>
+        <o-integer-input #phone_number attr="PHONE" class="input-padding" thousand-separator=" " step="0" grouping="no" fxFlex="40" read-only="yes"></o-integer-input>
+        <o-email-input #email attr="EMAIL" fxFlex read-only="yes"></o-email-input>
       </o-row>
       <o-row>
-        <o-email-input attr="EMAIL" fxFlex></o-email-input>
+        <o-text-input class="input-padding" attr="NAME_PRODUCTS" fxFlex="100" required="yes"></o-text-input>
+        <o-currency-input thousand-separator="." attr="PRICE" class="input-padding" step="0" grouping="no" fxFlex="25" required="yes">
+          <o-validator error-name="requiredMin" error-text="{{ 'MIN_VALIDATOR' | oTranslate }}" [validator-function]="minValidator"></o-validator>
+          <o-validator error-name="requiredMax" error-text="{{ 'MAX_VALIDATOR' | oTranslate }}" [validator-function]="maxValidator"></o-validator>
+        </o-currency-input>
       </o-row>
       <o-row>
-        <o-text-input attr="ADDRESS" fxFlex></o-text-input>
+        <o-combo attr="ID_PRODUCTS_CATEGORY" label="PRODUCTS_CATEGORY" service="master" entity="products_category" keys="ID" columns="ID;NAME" visible-columns="NAME" value-column="ID"></o-combo>
       </o-row>
       <o-row>
-        <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
-          class="input-padding" fxFlex="50"></o-real-input>
-        <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
-          fxFlex="50"></o-real-input>
-      </o-row>
-      <o-row>
-          <o-textarea-input attr="COMMENTS" fxFlex></o-textarea-input>
+          <o-textarea-input attr="DESCRIPTION_PRODUCTS" fxFlex></o-textarea-input>
         </o-row>
     </o-column>
   </o-row>
