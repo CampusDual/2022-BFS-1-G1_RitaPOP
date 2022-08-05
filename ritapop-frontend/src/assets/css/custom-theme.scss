@@ -7,7 +7,7 @@
 $color-global-pink : rgb(255, 0, 153);
 $color-global-pink-dif : rgb(251, 209, 235);
 $color-global-blue :rgb(4, 211, 188);
-$color-global-orage :rgba(255, 190, 92, 0.473);
+$color-global-orange :rgba(255, 190, 92, 0.473);
 $color-global-purple :rgb(218, 70, 255);
 $color-global-blue-dif :rgb(216, 249, 245);
 $color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
@@ -120,14 +120,38 @@ $dark-theme: mat-dark-theme($primary-dark, $accent-dark);
 .mat-table {
     .mat-header-row {
         .mat-header-cell {
-            background-color: $color-global-orage;
+            background-color: $color-global-orange;
         }
     }
 }
 
-
-
 .o-table-container{
-    background: $color-gradient-views;
+  background: $color-gradient-views;
 }
 
+.card-menu{
+  margin-top: 400px;
+  margin-left: 700px;
+  max-width: 800px;
+}
+
+body,html {
+    background-image: url("../images/brandingRP-3.png");
+    background-size: 2000px;
+    background-position: center;
+    background-position-x: -500px;
+    background-position-y: -20px;
+}
+
+.o-card-menu-item .mat-button{
+  background-color: $color-global-orange !important;
+}
+
+.optionClicked{
+  color: $color-global-pink !important;
+}
+
+.table-div{
+  height: calc(100% - 64px);
+  background: $color-gradient-views;
+}
