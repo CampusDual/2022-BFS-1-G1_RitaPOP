@@ -2,19 +2,18 @@ package com.grupo4.ritapop.model.core.service;
 
 import com.grupo4.ritapop.api.core.service.ISaleService;
 import com.grupo4.ritapop.model.core.dao.ClientDao;
+import com.grupo4.ritapop.model.core.dao.ProductsDao;
 import com.grupo4.ritapop.model.core.dao.SaleDao;
-import com.grupo4.ritapop.model.core.dao.TransactionDao;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.springframework.transaction.annotation.Transactional;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service("SaleService")
 @Lazy
@@ -23,6 +22,8 @@ public class SaleService implements ISaleService {
     private SaleDao saleDao;
     @Autowired
     private ClientDao clientDao;
+    @Autowired
+    private ProductsDao productsDao;
     @Autowired
     private DefaultOntimizeDaoHelper daoHelper;
     @Autowired
@@ -77,13 +78,31 @@ public class SaleService implements ISaleService {
 
 
     @Override
+    //@Transactional(rollbackFor = Exception.class)
     public EntityResult saleDetailsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-
-        /*int id_seller = getIdFromNIF(attrMap.get("NIF_SELLER"));
-        attrMap.put("SELLER_CLI",id_seller);
-        int id_buyer = getIdFromNIF(attrMap.get("NIF_BUYER"));
-        attrMap.put("BUYER_CLI",id_buyer);*/
-        return this.daoHelper.insert(this.saleDao, attrMap);
+        Map<String,Object> attrProductsMap=new HashMap<>();
+        attrProductsMap.put(ProductsDao.ATTR_NAME,attrMap.get("NAME_PRODUCTS"));
+        attrMap.remove("NAME_PRODUCTS");
+        attrProductsMap.put(ProductsDao.ATTR_DESCRIPTION,attrMap.get("DESCRIPTION_PRODUCTS"));
+        attrMap.remove("DESCRIPTION_PRODUCTS");
+        attrProductsMap.put(ProductsDao.ATTR_PHOTO,attrMap.get("PHOTO"));
+        attrMap.remove("PHOTO");
+        attrProductsMap.put(ProductsDao.ATTR_ID_CATEGORY,attrMap.get("ID_PRODUCTS_CATEGORY"));
+        attrMap.remove("ID_PRODUCTS_CATEGORY");
+        return this.daoHelper.insert(this.productsDao,attrProductsMap);
+        /*attrMap.remove("NAME");
+        attrMap.remove("SURNAME");
+        attrMap.remove("PHONE");
+        attrMap.remove("EMAIL");
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        attrMap.put(SaleDao.ATTR_PUBLICATION_DATETIME,timeStamp);
+        attrMap.put(SaleDao.ATTR_ID_TRANSACTION,null);
+        attrMap.put(SaleDao.ATTR_SALE_STATUS,1);
+        List<String> attrListProducts=new ArrayList<>();
+        attrListProducts.add("id");
+        EntityResult productsQuery=this.daoHelper.query(this.productsDao, attrProductsMap, attrListProducts);
+        //attrMap.put(SaleDao.ATTR_ID_PRODUCT,)
+        return this.daoHelper.insert(this.saleDao, attrMap);*/
     }
 
 
