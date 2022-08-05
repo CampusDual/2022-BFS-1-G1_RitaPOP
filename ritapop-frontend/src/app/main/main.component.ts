@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -6,13 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 
-export class MainComponent implements OnInit{
+export class MainComponent implements OnInit {
 
-  constructor(){
+  constructor(private router: Router) {
   }
-  ngOnInit(){
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    const url = this.router.url;
+    document.querySelectorAll('o-bar-menu-item').forEach(el => {
+      if (el.getAttribute('ng-reflect-route') == url) {
+        el.querySelector('a.mat-list-item').classList.add("optionClicked");
+      }
+    })
+  }
+
+  ngOnChange() {
+    const url = this.router.url;
+    document.querySelectorAll('o-bar-menu-item').forEach(el => {
+      if (el.getAttribute('ng-reflect-route') == url) {
+        el.querySelector('a.mat-list-item').classList.remove("optionClicked");
+      }
+    })
+
   }
 }
 
-export class MainModule {}
+export class MainModule { }
 
