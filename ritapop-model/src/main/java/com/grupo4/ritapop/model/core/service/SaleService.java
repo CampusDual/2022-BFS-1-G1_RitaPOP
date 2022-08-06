@@ -30,6 +30,8 @@ public class SaleService implements ISaleService {
     @Autowired
     private ClientService clientService;
 
+    final static String PRE_NATURAL_NUM = "SAL";
+
     @Override
     public EntityResult saleQuery(Map<String, Object> keyMap, List<String> attrList)
             throws OntimizeJEERuntimeException {
@@ -79,7 +81,7 @@ public class SaleService implements ISaleService {
 
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
+//    @Transactional(rollbackFor = Exception.class)
     public EntityResult saleDetailsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         EntityResult resultInsertProductsQuery;
         EntityResult resultInsertSalesQuery=null;
@@ -109,6 +111,21 @@ public class SaleService implements ISaleService {
             attrMap.put(SaleDao.ATTR_ID_PRODUCT,lastIdProductsQuery.get(0));
             attrMap.put(SaleDao.ATTR_NATURAL_ID,null);
             resultInsertSalesQuery=this.daoHelper.insert(this.saleDao, attrMap);
+
+            // Generates Natural number
+            String idValue = resultInsertSalesQuery.get("ID").toString();
+            String naturalNum = (String) (PRE_NATURAL_NUM + String.format("%05d", Integer.parseInt(idValue)));
+
+            Map<String,Object> attrNewValueMap = new HashMap<>();
+            Map<String,Object> keysWhere = new HashMap<>();
+
+            attrNewValueMap.put(SaleDao.ATTR_NATURAL_ID, naturalNum);
+            keysWhere.put(SaleDao.ATTR_ID, idValue);
+
+            //TODO Hay que hacer que el update funcione primero para que esto nos valga
+            EntityResult erUpdateSales = this.daoHelper.update(this.saleDao, attrNewValueMap, keysWhere);
+
+
         }
         return resultInsertSalesQuery;
     }

@@ -16,14 +16,14 @@
     <Queries>
         <Query id="details">
             <AmbiguousColumns>
-                <AmbiguousColumn name="ID_TRANSACTIONS" prefix="T"
-                                 databaseName="id" />
+<!--                <AmbiguousColumn name="ID_TRANSACTIONS" prefix="T"-->
+<!--                                 databaseName="id" />-->
                 <AmbiguousColumn name="ID_SALES" prefix="S"
                                  databaseName="id" />
                 <AmbiguousColumn name="ID_SELLER" prefix="C"
                                  databaseName="id" />
-                <AmbiguousColumn name="ID_PAYMENT_METHOD" prefix="PM"
-                                 databaseName="id" />
+<!--                <AmbiguousColumn name="ID_PAYMENT_METHOD" prefix="PM"-->
+<!--                                 databaseName="id" />-->
                 <AmbiguousColumn name="ID_SALES_STATUS" prefix="SS"
                                  databaseName="id" />
                 <AmbiguousColumn name="ID_PRODUCTS" prefix="P"
@@ -38,12 +38,12 @@
                                  databaseName="name" />
                 <AmbiguousColumn name="NAME_PRODUCTS_CATEGORY" prefix="PC"
                                  databaseName="name" />
-                <AmbiguousColumn name="NAME_PAYMENT_METHOD" prefix="PM"
-                                 databaseName="name" />
+<!--                <AmbiguousColumn name="NAME_PAYMENT_METHOD" prefix="PM"-->
+<!--                                 databaseName="name" />-->
                 <AmbiguousColumn name="NAME_CATEGORY" prefix="PC"
                                  databaseName="name" />
-                <AmbiguousColumn name="DESCRIPTION_PAYMENT_METHOD" prefix="PM"
-                                 databaseName="description" />
+<!--                <AmbiguousColumn name="DESCRIPTION_PAYMENT_METHOD" prefix="PM"-->
+<!--                                 databaseName="description" />-->
                 <AmbiguousColumn name="DESCRIPTION_PRODUCTS" prefix="P"
                                  databaseName="description" />
                 <AmbiguousColumn name="DESCRIPTION_PRODUCTS_CATEGORY" prefix="PC"
@@ -52,10 +52,6 @@
             <Sentence>
                 <![CDATA[
      SELECT #COLUMNS# FROM SALES S
-        INNER JOIN TRANSACTIONS T
-        ON S.ID_TRANSACTION = T.ID
-        INNER JOIN PAYMENT_METHOD PM
-        ON T.ID_PAYMENT_METHOD = PM.ID
         INNER JOIN CLIENT C
         ON S.ID_SELLER = C.ID
         INNER JOIN SALES_STATUS SS
