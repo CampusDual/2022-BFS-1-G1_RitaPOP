@@ -79,8 +79,10 @@ public class SaleService implements ISaleService {
 
 
     @Override
-    //@Transactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     public EntityResult saleDetailsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+        EntityResult resultInsertProductsQuery;
+        EntityResult resultInsertSalesQuery=null;
         Map<String,Object> attrProductsMap=new HashMap<>();
         attrProductsMap.put(ProductsDao.ATTR_NAME,attrMap.get("NAME_PRODUCTS"));
         attrMap.remove("NAME_PRODUCTS");
@@ -90,21 +92,25 @@ public class SaleService implements ISaleService {
         attrMap.remove("PHOTO");
         attrProductsMap.put(ProductsDao.ATTR_ID_CATEGORY,attrMap.get("ID_PRODUCTS_CATEGORY"));
         attrMap.remove("ID_PRODUCTS_CATEGORY");
-        this.daoHelper.insert(this.productsDao,attrProductsMap);
-        attrMap.remove("NAME");
-        attrMap.remove("SURNAME");
-        attrMap.remove("PHONE");
-        attrMap.remove("EMAIL");
-        String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
-        attrMap.put(SaleDao.ATTR_PUBLICATION_DATETIME,timeStamp);
-        attrMap.put(SaleDao.ATTR_ID_TRANSACTION,null);
-        attrMap.put(SaleDao.ATTR_SALE_STATUS,1);
-        List<String> attrListProducts=new ArrayList<>();
-        attrListProducts.add("ID");
-        EntityResult productsQuery=this.daoHelper.query(this.productsDao, attrProductsMap, attrListProducts);
-        List<Integer> lastIdProductsQuery=(List<Integer>) productsQuery.get(ProductsDao.ATTR_ID);
-        attrMap.put(SaleDao.ATTR_ID_PRODUCT,lastIdProductsQuery.get(0));
-        return this.daoHelper.insert(this.saleDao, attrMap);
+        resultInsertProductsQuery=this.daoHelper.insert(this.productsDao,attrProductsMap);
+        if(resultInsertProductsQuery.getCode() == EntityResult.OPERATION_SUCCESSFUL){
+            attrMap.remove("NAME");
+            attrMap.remove("SURNAME");
+            attrMap.remove("PHONE");
+            attrMap.remove("EMAIL");
+            String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+            attrMap.put(SaleDao.ATTR_PUBLICATION_DATETIME,timeStamp);
+            attrMap.put(SaleDao.ATTR_ID_TRANSACTION,null);
+            attrMap.put(SaleDao.ATTR_SALE_STATUS,1);
+            List<String> attrListProducts=new ArrayList<>();
+            attrListProducts.add("ID");
+            EntityResult productsQuery=this.daoHelper.query(this.productsDao, attrProductsMap, attrListProducts);
+            List<Integer> lastIdProductsQuery=(List<Integer>) productsQuery.get(ProductsDao.ATTR_ID);
+            attrMap.put(SaleDao.ATTR_ID_PRODUCT,lastIdProductsQuery.get(0));
+            attrMap.put(SaleDao.ATTR_NATURAL_ID,null);
+            resultInsertSalesQuery=this.daoHelper.insert(this.saleDao, attrMap);
+        }
+        return resultInsertSalesQuery;
     }
 
 
