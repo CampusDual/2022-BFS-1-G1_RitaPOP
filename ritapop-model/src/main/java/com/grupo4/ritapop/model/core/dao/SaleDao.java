@@ -10,14 +10,14 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/SaleDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class SaleDao extends OntimizeJdbcDaoSupport {
     // NEW SALES TABLE
-    public static final String ATTR_ID = "id";
-    public static final String ATTR_NATURAL_ID = "natural_id";
-    public static final String ATTR_ID_SELLER = "id_seller";
-    public static final String ATTR_ID_PRODUCT = "id_product";
-    public static final String ATTR_ID_TRANSACTION = "id_transaction";
-    public static final String ATTR_PUBLICATION_DATETIME = "publication_datetime";
-    public static final String ATTR_PRICE = "price";
-    public static final String ATTR_SALE_STATUS = "sale_status";
+    public static final String ATTR_ID = "ID";
+    public static final String ATTR_NATURAL_ID = "NATURAL_ID";
+    public static final String ATTR_ID_SELLER = "ID_SELLER";
+    public static final String ATTR_ID_PRODUCT = "ID_PRODUCT";
+    public static final String ATTR_ID_TRANSACTION = "ID_TRANSACTION";
+    public static final String ATTR_PUBLICATION_DATETIME = "PUBLICATION_DATETIME";
+    public static final String ATTR_PRICE = "PRICE";
+    public static final String ATTR_SALE_STATUS = "SALE_STATUS";
 
     // NEW SALEDETAILS QUERY
     public static final String QUERY_SALE_DETAILS = "details";

@@ -32,7 +32,7 @@ export class SalesNewComponent implements OnInit {
 
   maxValidator(control: FormControl): ValidationErrors  {
     let result = {};
-    if (control.value && control.value > 999999.99) {
+    if (control.value && control.value > 99999999.99) {
       result['requiredMax'] = true;
     }
     return result;

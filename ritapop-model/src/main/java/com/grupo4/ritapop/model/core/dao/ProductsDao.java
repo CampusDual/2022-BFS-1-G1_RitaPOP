@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 @Lazy
 @ConfigurationFile(configurationFile = "dao/ProductsDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class ProductsDao extends OntimizeJdbcDaoSupport {
-    public static final String ATTR_ID = "id";
-    public static final String ATTR_NAME = "name";
-    public static final String ATTR_DESCRIPTION = "description";
-    public static final String ATTR_PHOTO = "photo";
-    public static final String ATTR_ID_CATEGORY = "id_category";
+    public static final String ATTR_ID = "ID";
+    public static final String ATTR_NAME = "NAME";
+    public static final String ATTR_DESCRIPTION = "DESCRIPTION";
+    public static final String ATTR_PHOTO = "PHOTO";
+    public static final String ATTR_ID_CATEGORY = "ID_CATEGORY";
 }

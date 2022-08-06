@@ -4,6 +4,7 @@ import com.grupo4.ritapop.api.core.service.ISaleService;
 import com.grupo4.ritapop.model.core.dao.ClientDao;
 import com.grupo4.ritapop.model.core.dao.ProductsDao;
 import com.grupo4.ritapop.model.core.dao.SaleDao;
+import com.grupo4.ritapop.model.core.dao.UserRoleDao;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
@@ -89,8 +90,8 @@ public class SaleService implements ISaleService {
         attrMap.remove("PHOTO");
         attrProductsMap.put(ProductsDao.ATTR_ID_CATEGORY,attrMap.get("ID_PRODUCTS_CATEGORY"));
         attrMap.remove("ID_PRODUCTS_CATEGORY");
-        return this.daoHelper.insert(this.productsDao,attrProductsMap);
-        /*attrMap.remove("NAME");
+        this.daoHelper.insert(this.productsDao,attrProductsMap);
+        attrMap.remove("NAME");
         attrMap.remove("SURNAME");
         attrMap.remove("PHONE");
         attrMap.remove("EMAIL");
@@ -99,10 +100,11 @@ public class SaleService implements ISaleService {
         attrMap.put(SaleDao.ATTR_ID_TRANSACTION,null);
         attrMap.put(SaleDao.ATTR_SALE_STATUS,1);
         List<String> attrListProducts=new ArrayList<>();
-        attrListProducts.add("id");
+        attrListProducts.add("ID");
         EntityResult productsQuery=this.daoHelper.query(this.productsDao, attrProductsMap, attrListProducts);
-        //attrMap.put(SaleDao.ATTR_ID_PRODUCT,)
-        return this.daoHelper.insert(this.saleDao, attrMap);*/
+        List<Integer> lastIdProductsQuery=(List<Integer>) productsQuery.get(ProductsDao.ATTR_ID);
+        attrMap.put(SaleDao.ATTR_ID_PRODUCT,lastIdProductsQuery.get(0));
+        return this.daoHelper.insert(this.saleDao, attrMap);
     }
 
 
