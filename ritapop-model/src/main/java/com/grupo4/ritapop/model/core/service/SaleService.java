@@ -114,6 +114,7 @@ public class SaleService implements ISaleService {
             //attrMap.put(SaleDao.ATTR_NATURAL_ID,null);
             resultSalesQuery=this.daoHelper.query(this.saleDao, null,attrListSales);
             List<String> listNaturalID = (ArrayList<String>) resultSalesQuery.get(SaleDao.ATTR_NATURAL_ID);
+
             // Generates Natural number
             List<Integer> listIDForNaturalId=new ArrayList<>();
             for(String valueString:listNaturalID){
@@ -123,10 +124,10 @@ public class SaleService implements ISaleService {
             }
             int maxListNaturalId=Collections.max(listIDForNaturalId);
             maxListNaturalId=maxListNaturalId+1;
-
             String idValue = ""+maxListNaturalId;
             String naturalNum = (String) (PRE_NATURAL_NUM + String.format("%0"+(TOTALNUMBERDIGITS-idValue.length()+1)+"d", Integer.parseInt(idValue)));
             attrMap.put(SaleDao.ATTR_NATURAL_ID,naturalNum);
+
             // Incrementar Sales de Clients
             Map<String,Object> keyClientMap=new HashMap<>();
             keyClientMap.put(ClientDao.ATTR_ID,attrMap.get(SaleDao.ATTR_ID_SELLER));
@@ -138,8 +139,8 @@ public class SaleService implements ISaleService {
             ++valueSalesClient;
             Map<String,Object> newSalesClient=new HashMap<>();
             newSalesClient.put(ClientDao.ATTR_SALES,valueSalesClient);
-            // TODO Fault M_NECESARY_ID
             this.daoHelper.update(this.clientDao,newSalesClient,keyClientMap);
+
             resultInsertSalesQuery=this.daoHelper.insert(this.saleDao,attrMap);
         }
         return resultInsertSalesQuery;
