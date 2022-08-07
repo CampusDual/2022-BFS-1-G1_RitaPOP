@@ -31,6 +31,7 @@ public class SaleService implements ISaleService {
     private ClientService clientService;
 
     final static String PRE_NATURAL_NUM = "SAL";
+    final static int TOTALNUMBERDIGITS=5;
 
     @Override
     public EntityResult saleQuery(Map<String, Object> keyMap, List<String> attrList)
@@ -81,10 +82,12 @@ public class SaleService implements ISaleService {
 
 
     @Override
-//    @Transactional(rollbackFor = Exception.class)
+    @Transactional(rollbackFor = Exception.class)
     public EntityResult saleDetailsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         EntityResult resultInsertProductsQuery;
         EntityResult resultInsertSalesQuery=null;
+        EntityResult resultSalesQuery;
+        EntityResult resultClientQuery;
         Map<String,Object> attrProductsMap=new HashMap<>();
         attrProductsMap.put(ProductsDao.ATTR_NAME,attrMap.get("NAME_PRODUCTS"));
         attrMap.remove("NAME_PRODUCTS");
@@ -104,28 +107,40 @@ public class SaleService implements ISaleService {
             attrMap.put(SaleDao.ATTR_PUBLICATION_DATETIME,timeStamp);
             attrMap.put(SaleDao.ATTR_ID_TRANSACTION,null);
             attrMap.put(SaleDao.ATTR_SALE_STATUS,1);
-            List<String> attrListProducts=new ArrayList<>();
-            attrListProducts.add("ID");
-            EntityResult productsQuery=this.daoHelper.query(this.productsDao, attrProductsMap, attrListProducts);
-            List<Integer> lastIdProductsQuery=(List<Integer>) productsQuery.get(ProductsDao.ATTR_ID);
-            attrMap.put(SaleDao.ATTR_ID_PRODUCT,lastIdProductsQuery.get(0));
-            attrMap.put(SaleDao.ATTR_NATURAL_ID,null);
-            resultInsertSalesQuery=this.daoHelper.insert(this.saleDao, attrMap);
-
+            int idLastProducts=(Integer) resultInsertProductsQuery.get("ID");
+            attrMap.put(SaleDao.ATTR_ID_PRODUCT,idLastProducts);
+            List<String> attrListSales=new ArrayList<>();
+            attrListSales.add(SaleDao.ATTR_NATURAL_ID);
+            //attrMap.put(SaleDao.ATTR_NATURAL_ID,null);
+            resultSalesQuery=this.daoHelper.query(this.saleDao, null,attrListSales);
+            List<String> listNaturalID = (ArrayList<String>) resultSalesQuery.get(SaleDao.ATTR_NATURAL_ID);
             // Generates Natural number
-            String idValue = resultInsertSalesQuery.get("ID").toString();
-            String naturalNum = (String) (PRE_NATURAL_NUM + String.format("%05d", Integer.parseInt(idValue)));
+            List<Integer> listIDForNaturalId=new ArrayList<>();
+            for(String valueString:listNaturalID){
+                valueString=valueString.replace("SAL","");
+                int value=Integer.parseInt(valueString);
+                listIDForNaturalId.add(value);
+            }
+            int maxListNaturalId=Collections.max(listIDForNaturalId);
+            maxListNaturalId=maxListNaturalId+1;
 
-            Map<String,Object> attrNewValueMap = new HashMap<>();
-            Map<String,Object> keysWhere = new HashMap<>();
-
-            attrNewValueMap.put(SaleDao.ATTR_NATURAL_ID, naturalNum);
-            keysWhere.put(SaleDao.ATTR_ID, idValue);
-
-            //TODO Hay que hacer que el update funcione primero para que esto nos valga
-            EntityResult erUpdateSales = this.daoHelper.update(this.saleDao, attrNewValueMap, keysWhere);
-
-
+            String idValue = ""+maxListNaturalId;
+            String naturalNum = (String) (PRE_NATURAL_NUM + String.format("%0"+(TOTALNUMBERDIGITS-idValue.length()+1)+"d", Integer.parseInt(idValue)));
+            attrMap.put(SaleDao.ATTR_NATURAL_ID,naturalNum);
+            // Incrementar Sales de Clients
+            Map<String,Object> keyClientMap=new HashMap<>();
+            keyClientMap.put(ClientDao.ATTR_ID,attrMap.get(SaleDao.ATTR_ID_SELLER));
+            List<String> columnsClientQuery=new ArrayList<>();
+            columnsClientQuery.add(ClientDao.ATTR_SALES);
+            resultClientQuery=this.daoHelper.query(this.clientDao,keyClientMap,columnsClientQuery);
+            ArrayList<Integer> listSales=(ArrayList<Integer>) resultClientQuery.get(ClientDao.ATTR_SALES);
+            int valueSalesClient=listSales.get(0);
+            ++valueSalesClient;
+            Map<String,Object> newSalesClient=new HashMap<>();
+            newSalesClient.put(ClientDao.ATTR_SALES,valueSalesClient);
+            // TODO Fault M_NECESARY_ID
+            this.daoHelper.update(this.clientDao,newSalesClient,keyClientMap);
+            resultInsertSalesQuery=this.daoHelper.insert(this.saleDao,attrMap);
         }
         return resultInsertSalesQuery;
     }
