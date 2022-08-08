@@ -67,6 +67,10 @@
   "NATURAL_ID": "Sale no.",
   "NAME_PRODUCTS_CATEGORY": "Product category",
   "NAME_PAYMENT_METHOD": "Payment method",
-  "NAME_SALES_STATUS": "Status"
+  "NAME_SALES_STATUS": "Status",
+  "CLIENT_PERSONAL_INFORMATION": "Client personal information (Choose an ID)",
+  "DNI_SELLER": "Seller ID",
+  "PRODUCTS_CATEGORY": "Product category",
+  "DESCRIPTION_PRODUCTS": "Product description"
 }
 

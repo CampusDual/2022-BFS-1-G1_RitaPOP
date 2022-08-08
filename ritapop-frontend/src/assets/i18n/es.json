@@ -67,6 +67,10 @@
   "NATURAL_ID": "Nº de venta",
   "NAME_PRODUCTS_CATEGORY": "Categoría",
   "NAME_PAYMENT_METHOD": "Forma de pago",
-  "NAME_SALES_STATUS": "Estado"
+  "NAME_SALES_STATUS": "Estado",
+  "CLIENT_PERSONAL_INFORMATION": "Información personal de cliente (seleccione un DNI)",
+  "DNI_SELLER": "DNI del vendedor",
+  "PRODUCTS_CATEGORY": "Categoría del producto",
+  "DESCRIPTION_PRODUCTS": "Descripción del producto"
 }
 
