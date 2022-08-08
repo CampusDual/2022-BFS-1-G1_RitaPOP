@@ -2,15 +2,15 @@
   <o-text-input attr="ID" sql-type="INTEGER" enabled="no"></o-text-input>
   <o-column title="{{'CLIENT' | oTranslate }}">
       <o-row>
-          <o-text-input attr="NAME" class="input-padding" fxFlex="70" required="yes" fxFlex="15"></o-text-input>
-          <o-text-input attr="SURNAME" class="input-padding" fxFlex="70" required="yes" fxFlex="15"></o-text-input>
+          <o-text-input attr="NAME" class="input-padding" fxFlex="70" required="yes"></o-text-input>
+          <o-text-input attr="SURNAME" class="input-padding" fxFlex="70" required="yes"></o-text-input>
         </o-row>
         <o-row>
           <o-date-input attr="BIRTH_DATE" class="input-padding" fxFlex="20" required="yes"></o-date-input>
           <o-nif-input attr="NIF" class="input-padding" fxFlex="20" required="yes"></o-nif-input>
         </o-row>
         <o-row>
-          <o-email-input attr="EMAIL" class="input-padding" fxFlex="15" required="yes"></o-email-input>
+          <o-email-input attr="EMAIL" class="input-padding" fxFlex="30" required="yes"></o-email-input>
           <o-integer-input attr="PHONE_NUMBER" class="input-padding" fxFlex="15" thousand-separator=" ">
             <o-validator error-name="requiredPhoneNumber" error-text="{{ 'PHONE_VALIDATOR' | oTranslate }}" [validator-function]="minPhoneValidator"></o-validator>
             <o-validator error-name="requiredPhoneNumber" error-text="{{ 'PHONE_VALIDATOR' | oTranslate }}" [validator-function]="maxPhoneValidator"></o-validator>
