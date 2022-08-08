@@ -3,7 +3,6 @@
 // Include non-theme styles for core.
 @include mat-core();
 
-
 $color-global-pink : rgb(255, 0, 153);
 $color-global-pink-dif : rgb(251, 209, 235);
 $color-global-blue :rgb(4, 211, 188);
@@ -12,7 +11,6 @@ $color-global-purple :rgb(218, 70, 255);
 $color-global-blue-dif :rgb(216, 249, 245);
 $color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
 $color-gradient-views  :  linear-gradient(to right,rgb(216, 249, 245),rgb(251, 209, 235));
-
 
 /* Color definitions */
 $mat-custom-accent: (
