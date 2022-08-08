@@ -11,7 +11,7 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/ClientDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class ClientDao extends OntimizeJdbcDaoSupport {
 
- public static final String ATTR_ID = "ID";
+ public static final String ATTR_ID = "id";
  public static final String ATTR_NAME = "NAME";
  public static final String ATTR_SURNAME = "SURNAME";
  public static final String ATTR_NIF = "NIF";
