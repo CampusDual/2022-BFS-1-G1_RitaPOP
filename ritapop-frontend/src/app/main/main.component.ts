@@ -14,24 +14,6 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngAfterViewInit() {
-    const url = this.router.url;
-    document.querySelectorAll('o-bar-menu-item').forEach(el => {
-      if (el.getAttribute('ng-reflect-route') == url) {
-        el.querySelector('a.mat-list-item').classList.add("optionClicked");
-      }
-    })
-  }
-
-  ngOnChange() {
-    const url = this.router.url;
-    document.querySelectorAll('o-bar-menu-item').forEach(el => {
-      if (el.getAttribute('ng-reflect-route') == url) {
-        el.querySelector('a.mat-list-item').classList.remove("optionClicked");
-      }
-    })
-
-  }
 }
 
 export class MainModule { }
