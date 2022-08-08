@@ -11,5 +11,4 @@ export class ClientsHomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -10,6 +10,7 @@ export class UsersHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.querySelector('.o-bar-menu nav a');
   }
 
 }

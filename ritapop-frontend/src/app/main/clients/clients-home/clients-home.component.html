@@ -1,4 +1,5 @@
-<o-form-layout-manager title="{{'CLIENTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ID" >
+<div class="table-div">
+<o-form-layout-manager title="{{'CLIENT' | oTranslate }}" separator=" " mode="dialog" label-columns="ID" >
   <div fxFill fxLayout="column" fxLayoutAlign="start" class="table-div">
   <o-table #clientsTable attr="clientsTable" service="clients" entity="client" keys="ID"
     columns="ID;NAME;SURNAME;NIF;BIRTH_DATE;SALES"
@@ -11,3 +12,4 @@
   </o-table>
 </div>
 </o-form-layout-manager>
+</div>
