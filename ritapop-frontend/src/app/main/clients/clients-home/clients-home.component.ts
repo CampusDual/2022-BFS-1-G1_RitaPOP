@@ -11,13 +11,4 @@ export class ClientsHomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  ngAfterViewInit(){
-    document.querySelectorAll('o-bar-menu nav a');
-  }
-
-  ngOnDestroy(){
-    document.querySelector('o-bar-menu nav a').classList.remove('optionClicked');
-  }
-
 }
