@@ -1,0 +1,34 @@
+<o-form service="sales" entity="saleDetails" keys="ID_SALES" header-actions="I;U;D" show-header-navigation="no">
+    <o-integer-input attr="ID_SALES" sql-type="INTEGER" enabled="no"></o-integer-input>
+  <o-row>
+    <o-column>
+       <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+    </o-column>
+    <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
+      <o-row>
+        <o-combo #combo attr="ID_SELLER" label="DNI_SELLER" service="clients" entity="client" keys="ID" columns="ID;NIF;NAME;SURNAME;EMAIL;PHONE_NUMBER" visible-columns="NIF" value-column="ID" (onChange)="addDataSeller($event,combo,name,surname,email,phone_number)"></o-combo>
+      </o-row><!--
+      <o-row>
+        <o-text-input #name class="input-padding" attr="NAME" fxFlex="40" required="yes" read-only="yes"></o-text-input>
+        <o-text-input #surname class="input-padding" attr="SURNAME" fxFlex="40" required="yes" read-only="yes"></o-text-input>
+      </o-row>
+      <o-row>
+        <o-integer-input #phone_number attr="PHONE" class="input-padding" thousand-separator=" " step="0" grouping="no" fxFlex="40" read-only="yes"></o-integer-input>
+        <o-email-input #email attr="EMAIL" fxFlex read-only="yes"></o-email-input>
+      </o-row>
+      <o-row>
+        <o-text-input class="input-padding" attr="NAME_PRODUCTS" fxFlex="100" required="yes"></o-text-input>
+        <o-currency-input thousand-separator="." attr="PRICE" class="input-padding" step="0" grouping="no" fxFlex="25" required="yes">
+          <o-validator error-name="requiredMin" error-text="{{ 'MIN_VALIDATOR' | oTranslate }}" [validator-function]="minValidator"></o-validator>
+          <o-validator error-name="requiredMax" error-text="{{ 'MAX_VALIDATOR' | oTranslate }}" [validator-function]="maxValidator"></o-validator>
+        </o-currency-input>
+      </o-row>
+      <o-row>
+        <o-combo attr="ID_PRODUCTS_CATEGORY" label="PRODUCTS_CATEGORY" service="master" entity="products_category" keys="ID" columns="ID;NAME" visible-columns="NAME" value-column="ID"></o-combo>
+      </o-row>
+      <o-row>
+          <o-textarea-input attr="DESCRIPTION_PRODUCTS" fxFlex></o-textarea-input>
+        </o-row> -->
+    </o-column>
+  </o-row>
+</o-form>

@@ -118,7 +118,7 @@ public class SaleService implements ISaleService {
             // Generates Natural number
             List<Integer> listIDForNaturalId=new ArrayList<>();
             for(String valueString:listNaturalID){
-                valueString=valueString.replace("SAL","");
+                valueString=valueString.replace(PRE_NATURAL_NUM,"");
                 int value=Integer.parseInt(valueString);
                 listIDForNaturalId.add(value);
             }
