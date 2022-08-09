@@ -67,6 +67,8 @@
   "NATURAL_ID": "Nº de venta",
   "NAME_PRODUCTS_CATEGORY": "Categoría",
   "NAME_PAYMENT_METHOD": "Forma de pago",
-  "NAME_SALES_STATUS": "Estado"
+  "NAME_SALES_STATUS": "Estado",
+  "CLIENTS": "Clientes",
+  "ID":"Id"
 }
 
