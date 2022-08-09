@@ -153,3 +153,33 @@ body,html {
   height: calc(100% - 64px);
   background: $color-gradient-views;
 }
+ //Responsive para MAC
+ @media screen and (max-width: 2600px){
+  body,html {
+      background-image: url("../images/brandingRP-3.png");
+      background-size: 2550px;
+      background-position: center;
+      background-position-x: -600px;
+      background-position-y: -20px;
+
+    .card-menu{
+      margin-top: 500px;
+      margin-left: 850px;
+      max-width: 800px;
+        }
+     } 
+  }
+ @media screen and (max-width: 1500px){
+  body,html {
+      background-image: url("../images/brandingRP-3.png");
+      background-size: 1500px;
+      background-position: center;
+      background-position-x: -800px;
+      background-position-y: -20px;
+    .card-menu{
+      margin-top: 500px;
+      margin-left: 850px;
+      max-width: 800px;
+        }
+     } 
+  }
