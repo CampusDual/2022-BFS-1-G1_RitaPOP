@@ -3,81 +3,87 @@
 // Include non-theme styles for core.
 @include mat-core();
 
-$color-global-pink : rgb(255, 0, 153);
-$color-global-pink-dif : rgb(251, 209, 235);
-$color-global-blue :rgb(4, 211, 188);
-$color-global-orange :rgba(255, 190, 92, 0.473);
-$color-global-purple :rgb(218, 70, 255);
-$color-global-blue-dif :rgb(216, 249, 245);
-$color-gradient-footer  :  linear-gradient(to right,rgb(4, 211, 188, 0.9),rgb(255, 0, 153, 0.6));
-$color-gradient-views  :  linear-gradient(to right,rgb(216, 249, 245),rgb(251, 209, 235));
+$color-global-pink: rgb(255, 0, 153);
+$color-global-pink-dif: rgb(251, 209, 235);
+$color-global-blue: rgb(4, 211, 188);
+$color-global-orange: rgba(255, 190, 92, 0.473);
+$color-global-purple: rgb(218, 70, 255);
+$color-global-blue-dif: rgb(216, 249, 245);
+$color-gradient-footer: linear-gradient(
+  to right,
+  rgb(4, 211, 188, 0.9),
+  rgb(255, 0, 153, 0.6)
+);
+$color-gradient-views: linear-gradient(
+  to right,
+  rgb(216, 249, 245),
+  rgb(251, 209, 235)
+);
 
 /* Color definitions */
 $mat-custom-accent: (
- 50 : #FFE0F3 ,
- 100 : #FFB3E0 ,
- 200 : #FF80CC ,
- 300 : #FF4DB8 ,
- 400 : #FF26A8 ,
- 500 : #FF0099 ,
- 600 : #FF0091 ,
- 700 : #FF0086 ,
- 800 : #FF007C ,
- 900 : #FF006B ,
- A100 : #FFFFFF ,
- A200: #FFF2F7 ,
- A400: #FFBFD6 ,
- A700: #FFA6C6 ,
- contrast: (
-    50 : #000000,
-    100 : #000000,
-    200 : #000000,
-    300 : #000000,
-    400 : #000000,
-    500 : #000000,
-    600 : #000000,
-    700 : #ffffff,
-    800 : #ffffff,
-    900 : #ffffff,
-    A100 : #000000,
-    A200 : #000000,
-    A700 : #ffffff,
-)
+  50: #ffe0f3,
+  100: #ffb3e0,
+  200: #ff80cc,
+  300: #ff4db8,
+  400: #ff26a8,
+  500: #ff0099,
+  600: #ff0091,
+  700: #ff0086,
+  800: #ff007c,
+  900: #ff006b,
+  A100: #ffffff,
+  A200: #fff2f7,
+  A400: #ffbfd6,
+  A700: #ffa6c6,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A700: #ffffff,
+  ),
 );
 
 $mat-custom-primary: (
-/* For use in src/lib/core/theming/_palette.scss */
-50 : #E1FAF7,
-100 : #B4F2EB,
-200 : #82E9DE,
-300 : #4FE0D0,
-400 : #2ADAC6,
-500 : #04D3BC,
-600 : #03CEB6,
-700 : #03C8AD,
-800 : #02C2A5,
-900 : #01B797 ,
-A100 : #E0FFF9 ,
-A200 : #ADFFEE ,
-A400 : #7AFFE4,
-A700 : #61FFDE ,
-contrast: (
-50 : #000000,
-100 : #000000,
-200 : #000000,
-300 : #ffffff,
-400 : #ffffff,
-500 : #ffffff,
-600 : #ffffff,
-700 : #ffffff,
-800 : #FFFFFF ,
-900 : #ffffff,
-A100 : #000000,
-A200 : #000000,
-A400 : #ffffff,
-A700 : #ffffff,
-)
-
+  /* For use in src/lib/core/theming/_palette.scss */ 50: #e1faf7,
+  100: #b4f2eb,
+  200: #82e9de,
+  300: #4fe0d0,
+  400: #2adac6,
+  500: #04d3bc,
+  600: #03ceb6,
+  700: #03c8ad,
+  800: #02c2a5,
+  900: #01b797,
+  A100: #e0fff9,
+  A200: #adffee,
+  A400: #7affe4,
+  A700: #61ffde,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  )
 );
 // Define a theme.
 $primary: mat-palette($mat-custom-primary);
@@ -88,98 +94,105 @@ $theme: mat-light-theme($primary, $accent);
 // Insert custom background color
 $background: map-get($theme, "background");
 $background: map_merge(
-$background,
-(
-"background": $background-color,
-)
+  $background,
+  (
+    "background": $background-color,
+  )
 );
 $theme: map_merge(
-$theme,
-(
-"background": $background,
-)
+  $theme,
+  (
+    "background": $background,
+  )
 );
 /* Dark theme */
 $primary-dark: mat-palette($mat-custom-primary);
 $accent-dark: mat-palette($mat-custom-accent);
 $dark-theme: mat-dark-theme($primary-dark, $accent-dark);
 
-.input-padding{
-    padding-right: 6px;
-  }
-  o-text-input, o-date-input, o-image{
-    padding-right: 6px;
-  }
-  
-  .o-bar-menu nav a:hover {
-    color: $color-global-pink;
-  }
-
-.mat-table {
-    .mat-header-row {
-        .mat-header-cell {
-            background-color: $color-global-orange;
-        }
-    }
+.input-padding {
+  padding-right: 6px;
+}
+o-text-input,
+o-date-input,
+o-image {
+  padding-right: 6px;
 }
 
-.o-table-container{
+.o-bar-menu nav a:hover {
+  color: $color-global-pink;
+}
+
+.mat-table {
+  .mat-header-row {
+    .mat-header-cell {
+      background-color: $color-global-orange;
+    }
+  }
+}
+
+.o-table-container {
   background: $color-gradient-views;
 }
 
-.card-menu{
+.card-menu {
   margin-top: 400px;
   margin-left: 700px;
   max-width: 800px;
 }
 
-body,html {
+body,
+html {
+  background-image: url("../images/brandingRP-3.png");
+  background-size: 2000px;
+  background-position: center;
+  background-position-x: -500px;
+  background-position-y: -20px;
+}
+
+.o-card-menu-item .mat-button {
+  background-color: $color-global-orange !important;
+}
+
+.optionClicked {
+  color: $color-global-pink !important;
+}
+
+.table-div {
+  height: calc(100% - 64px);
+  background: $color-gradient-views;
+}
+
+//Responsive para MAC
+@media screen and (max-width: 2600px) {
+  body,
+  html {
+    background-image: url("../images/brandingRP-3.png");
+    background-size: 2550px;
+    background-position: center;
+    background-position-x: -600px;
+    background-position-y: -20px;
+    .card-menu {
+      margin-top: 500px;
+      margin-left: 850px;
+      max-width: 800px;
+    }
+  }
+}
+
+//Responsive para pc
+@media screen and (max-width: 1920px) {
+  body,
+  html {
     background-image: url("../images/brandingRP-3.png");
     background-size: 2000px;
     background-position: center;
     background-position-x: -500px;
     background-position-y: -20px;
-}
-
-.o-card-menu-item .mat-button{
-  background-color: $color-global-orange !important;
-}
-
-.optionClicked{
-  color: $color-global-pink !important;
-}
-
-.table-div{
-  height: calc(100% - 64px);
-  background: $color-gradient-views;
-}
- //Responsive para MAC
- @media screen and (max-width: 2600px){
-  body,html {
-      background-image: url("../images/brandingRP-3.png");
-      background-size: 2550px;
-      background-position: center;
-      background-position-x: -600px;
-      background-position-y: -20px;
-
-    .card-menu{
-      margin-top: 500px;
-      margin-left: 850px;
+    .card-menu {
+      margin-top: 400px;
+      margin-left: 700px;
       max-width: 800px;
-        }
-     } 
+    }
   }
- @media screen and (max-width: 1500px){
-  body,html {
-      background-image: url("../images/brandingRP-3.png");
-      background-size: 1500px;
-      background-position: center;
-      background-position-x: -800px;
-      background-position-y: -20px;
-    .card-menu{
-      margin-top: 500px;
-      margin-left: 850px;
-      max-width: 800px;
-        }
-     } 
-  }
+}
