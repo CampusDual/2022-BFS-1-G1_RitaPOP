@@ -7,3 +7,6 @@ export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'transaction', name: 'TRANSACTIONS', icon: 'business_center', route: '/main/transactions'},
   { id: 'sales', name: 'SALES', icon: 'shopping_cart', route: '/main/sales'}
 ];
+
+  
+
