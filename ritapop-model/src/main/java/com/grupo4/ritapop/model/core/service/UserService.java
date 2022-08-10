@@ -67,6 +67,8 @@ public class UserService implements IUserService {
 		attrMap.put(UserDao.ATTR_USER_, attrMap.get(UserDao.ATTR_USER_TUSER));
 		attrMap.remove(UserDao.ATTR_USER_TUSER);
 
+		attrMap.put(UserDao.ATTR_PASSWORD,"Abc123.");
+
 		insertNewUser = this.daoHelper.insert(this.userDao, attrMap);
 
 		if(insertNewUser.getCode() == EntityResult.OPERATION_SUCCESSFUL){
