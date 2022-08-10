@@ -32,7 +32,7 @@ public class UserDao extends OntimizeJdbcDaoSupport {
 
 	public static final String ATTR_USER_        = "USER_";
 	public static final String ATTR_EMAIL        = "email";
-	public static final String ATTR_PASSWORD     = "password";
+	public static final String ATTR_PASSWORD     = "PASSWORD";
 	public static final String ATTR_NAME         = "name";
 	public static final String ATTR_SURNAME      = "surname";
 	public static final String ATTR_NIF          = "nif";
