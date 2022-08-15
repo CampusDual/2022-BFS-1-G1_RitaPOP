@@ -16,3 +16,35 @@ span{
 span:hover{
     cursor: default;
 }
+//Responsive para pc
+@media screen and (max-width: 1920px) {
+    .user-profile{
+        margin-top: 2.1%;
+        position: absolute;
+        margin-left: 0%;
+    }
+    .options{
+        margin-left: 60%;
+    }
+    span{
+        margin-left: 50%;
+        margin-top: 2.2%;
+        position: absolute;
+    }
+  }
+  
+  //Responsive para móvil
+@media only screen
+and (min-width: 320px)
+and (max-width: 736px){
+    .user-profile{
+        color: black;
+    }
+    .options{
+        margin-left: 0%;
+    }
+
+    span{
+        display: none;
+    }
+}

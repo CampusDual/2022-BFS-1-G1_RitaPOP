@@ -196,3 +196,25 @@ html {
     }
   }
 }
+
+
+//Responsive para móvil
+@media only screen
+and (min-width: 320px)
+and (max-width: 736px)
+ {
+  body,
+  html {
+    background-image: url("../images/rosapaloFondo.jpg");
+    background-size: 2300px;
+    background-position: center;
+    background-position-x: -500px;
+    background-position-y: -20px;
+    .card-menu {
+      margin-top: 50px;
+      margin-left: 10px;
+      max-width: 500px;
+    }
+  }
+}
+
