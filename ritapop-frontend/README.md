@@ -1,3 +1,15 @@
+# Proyecto RitaPOP
+
+## Realizado por :
+
+
+| Módulo  | Explicación |
+| ------- | ----------- |
+| ✔ registroScan.model    | Para manejar la informacion/registro de un scaneo       |               
+| ✔ data-local.service    | Donde se importa los registros del modelo(almacena info)|
+| ✔ scanner-history.page  | Donde se importa los registros del modelo(almacena info)|
+| ✔ scanner.page.ts       |  importo el servicio para mostrarlos en los html        |
+
 # OntimizeWebNgx JEE Seed
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
