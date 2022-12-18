@@ -25,17 +25,17 @@ Ir al directorio principal y usar Maven para instalar la aplicación
 
 Ir al directorio model y ejecutar el comando:
 
-´´´
+```
   mvn exec:java -Prun_database
-´´´
+```
 
 # Arrancar el servidor Backend
 
 Ir al directorio boot y ejecutar el comando:
 
-´´´
+```
  mvn spring-boot:run
-´´´
+```
 
 ##  🔧 Instalaciones en front
 
@@ -43,7 +43,7 @@ Ir al directorio boot y ejecutar el comando:
  
  ```
   npm install -g @angular/cli
-  ```
+ ```
   *Node 
   v12.22.10
   
@@ -65,9 +65,9 @@ Ir al directorio boot y ejecutar el comando:
 
 Ir al directorio frontend y ejecutar el comando
 
-´´´
+```
 npm start
-´´´
+```
 
 Para acceder a la aplicación navegar a la URL:
 
